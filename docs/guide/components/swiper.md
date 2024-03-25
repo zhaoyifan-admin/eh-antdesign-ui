@@ -1,7 +1,7 @@
 # 触摸滑动插件 Swiper<Tag color="volcano" style="vertical-align: top; margin-left: 6px;">{{ pkg.dependencies.swiper }}</Tag>
 
 <BackTop />
-<Watermark fullscreen content="Vue Amazing UI" />
+<Watermark fullscreen content="Eh Antdesign UI" />
 
 <br/>
 

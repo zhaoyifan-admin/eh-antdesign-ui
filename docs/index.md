@@ -1,26 +1,26 @@
 ---
 layout: home
 
-title: Vue Amazing UI
+title: Eh Antdesign UI
 titleTemplate: Amazing UI Components Library
 
 hero:
-  name: Vue Amazing UI
+  name: Eh Antdesign UI
   text: Amazing UI 组件库
   tagline: 基于 Vue3 + TS + Vite 开发
   image:
     src: /amazing-logo.svg
-    alt: Vue Amazing UI
+    alt: Eh Antdesign UI
   actions:
     - theme: brand
       text: Get Started
       link: /guide/features
     - theme: alt
       text: View on GitHub
-      link: https://github.com/themusecatcher/vue-amazing-ui
+      link: https://github.com/zhaoyifan-admin/eh-antdesign-ui
     - theme: alt
       text: View on NPM
-      link: https://www.npmjs.com/package/vue-amazing-ui
+      link: https://www.npmjs.com/package/eh-antdesign-ui
 features:
   - icon: 🛠️
     title: 开发依赖
@@ -33,7 +33,7 @@ features:
     details: '所有组件 CSS 样式均使用 box-sizing: border-box; 模式'
 ---
 
-<Watermark fullscreen content="Vue Amazing UI" />
+<Watermark fullscreen content="Eh Antdesign UI" />
 
 <script setup lang="ts">
 import { onMounted } from 'vue'

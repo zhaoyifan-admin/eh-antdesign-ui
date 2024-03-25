@@ -5,7 +5,7 @@ import { routes } from '@/router'
 const installData = ref([
   {
     header: 'Install',
-    text: `pnpm i vue-amazing-ui\n# or\nyarn add vue-amazing-ui\n# or\nnpm i vue-amazing-ui`
+    text: `pnpm i eh-antdesign-ui\n# or\nyarn add eh-antdesign-ui\n# or\nnpm i eh-antdesign-ui`,
   }
 ])
 // import.meta.glob 都支持以字符串形式导入文件，类似于 以字符串形式导入资源
@@ -32,7 +32,7 @@ import {
   downloadFile,
   formatNumber,
   toggleDark
-} from 'vue-amazing-ui'
+} from 'eh-antdesign-ui'
 <\/script>`
   }
 ])
@@ -44,7 +44,7 @@ const sum = computed(() => {
 <template>
   <div>
     <Space align="top" :size="6">
-      <h1>Vue Amazing UI</h1>
+      <h1>Eh Antdesign UI</h1>
       <Tag color="#FC5404">{{ pkg.version }}</Tag>
     </Space>
     <Descriptions class="mb10 mt30" title="生产环境依赖 dependencies" :column="{md: 2, lg: 3, xl: 4}">

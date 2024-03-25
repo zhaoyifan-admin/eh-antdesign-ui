@@ -1,26 +1,26 @@
 # 快速上手
 
 <BackTop />
-<Watermark fullscreen content="Vue Amazing UI" />
+<Watermark fullscreen content="Eh Antdesign UI" />
 
 ## 安装
 
 ::: code-group
 
 ```sh [npm]
-$ npm add vue-amazing-ui
+$ npm add eh-antdesign-ui
 ```
 
 ```sh [pnpm]
-$ pnpm add vue-amazing-ui
+$ pnpm add eh-antdesign-ui
 ```
 
 ```sh [yarn]
-$ yarn add vue-amazing-ui
+$ yarn add eh-antdesign-ui
 ```
 
 ```sh [bun]
-$ bun add vue-amazing-ui
+$ bun add eh-antdesign-ui
 ```
 
 :::
@@ -33,11 +33,11 @@ $ bun add vue-amazing-ui
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import VueAmazingUI from 'vue-amazing-ui'
-import 'vue-amazing-ui/css'
+import EhAntdesignUI from 'eh-antdesign-ui'
+import 'eh-antdesign-ui/css'
 
 const app = createApp(App)
-app.use(VueAmazingUI)
+app.use(EhAntdesignUI)
 
 app.mount('#app')
 ```
@@ -46,8 +46,8 @@ app.mount('#app')
 
 ```vue
 <script setup lang="ts">
-import { Button } from 'vue-amazing-ui'
-import 'vue-amazing-ui/css'
+import { Button } from 'eh-antdesign-ui'
+import 'eh-antdesign-ui/css'
 </script>
 
 <template>

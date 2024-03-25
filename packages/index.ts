@@ -215,7 +215,7 @@ export {
   Watermark
 }
 
-const VueAmazingUI = {
+const EhAntdesignUI = {
   install
 }
-export default VueAmazingUI
+export default EhAntdesignUI

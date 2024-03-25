@@ -1,7 +1,7 @@
 # 面包屑 Breadcrumb
 
 <BackTop />
-<Watermark fullscreen content="Vue Amazing UI" />
+<Watermark fullscreen content="Eh Antdesign UI" />
 
 <br/>
 
@@ -16,7 +16,7 @@
 <script setup lang="ts">
 const routes = [
     {
-      path: '/first', // 路由地址
+      path: '/first' // 路由地址
       query: { id: 1, tab: 2 }, // 路由参数
       name: '一级路由' // 路由名称
     },

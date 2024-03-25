@@ -26,7 +26,7 @@ function debounce (fn: Function, delay = 300): any {
 
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
-import { debounce } from 'vue-amazing-ui'
+import { debounce } from 'eh-antdesign-ui'
 
 onMounted(() => {
   document.onscroll = debounce(showPosition, 1000)
@@ -48,7 +48,7 @@ function showPosition () {
 ```vue
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
-import { debounce } from 'vue-amazing-ui'
+import { debounce } from 'eh-antdesign-ui'
 
 onMounted(() => {
   document.onscroll = debounce(showPosition, 1000)

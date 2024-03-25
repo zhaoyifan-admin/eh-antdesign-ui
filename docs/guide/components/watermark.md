@@ -14,7 +14,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 const model = reactive({
-  content: 'Vue Amazing UI',
+  content: 'Eh Antdesign UI',
   layout: 'alternate',
   color: 'rgba(0,0,0,.15)',
   fontSize: 16,
@@ -39,7 +39,7 @@ const show = ref(false)
 
 ## 基本使用
 
-<Watermark content="Vue Amazing UI">
+<Watermark content="Eh Antdesign UI">
   <div style="height: 360px" />
 </Watermark>
 
@@ -47,7 +47,7 @@ const show = ref(false)
 
 ```vue
 <template>
-  <Watermark content="Vue Amazing UI">
+  <Watermark content="Eh Antdesign UI">
     <div style="height: 360px" />
   </Watermark>
 </template>
@@ -57,7 +57,7 @@ const show = ref(false)
 
 ## 平行布局水印
 
-<Watermark layout="parallel" content="Vue Amazing UI">
+<Watermark layout="parallel" content="Eh Antdesign UI">
   <div style="height: 360px" />
 </Watermark>
 
@@ -65,7 +65,7 @@ const show = ref(false)
 
 ```vue
 <template>
-  <Watermark layout="parallel" content="Vue Amazing UI">
+  <Watermark layout="parallel" content="Eh Antdesign UI">
     <div style="height: 360px" />
   </Watermark>
 </template>
@@ -77,7 +77,7 @@ const show = ref(false)
 
 #### 通过 content 设置 字符串数组 指定多行文字水印内容。
 
-<Watermark :content="['Vue Amazing UI', 'Hello World']">
+<Watermark :content="['Eh Antdesign UI', 'Hello World']">
   <div style="height: 400px" />
 </Watermark>
 
@@ -85,7 +85,7 @@ const show = ref(false)
 
 ```vue
 <template>
-  <Watermark :content="['Vue Amazing UI', 'Hello World']">
+  <Watermark :content="['Eh Antdesign UI', 'Hello World']">
     <div style="height: 400px" />
   </Watermark>
 </template>
@@ -121,7 +121,7 @@ const show = ref(false)
 
 ## 全屏幕水印
 
-<Watermark v-if="show" fullscreen content="Vue Amazing UI"></Watermark>
+<Watermark v-if="show" fullscreen content="Eh Antdesign UI"></Watermark>
 <Switch v-model:checked="show" />
 
 ::: details Show Code
@@ -132,7 +132,7 @@ import { ref } from 'vue'
 const show = ref(false)
 </script>
 <template>
-  <Watermark v-if="show" fullscreen content="Vue Amazing UI"></Watermark>
+  <Watermark v-if="show" fullscreen content="Eh Antdesign UI"></Watermark>
   <Switch v-model:checked="show" />
 </template>
 ```
@@ -217,7 +217,7 @@ const show = ref(false)
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 const model = reactive({
-  content: 'Vue Amazing UI',
+  content: 'Eh Antdesign UI',
   layout: 'alternate',
   color: 'rgba(0,0,0,.15)',
   fontSize: 16,

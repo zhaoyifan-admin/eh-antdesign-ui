@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 const model = reactive({
-  content: 'Vue Amazing UI',
+  content: 'Eh Antdesign UI',
   layout: 'alternate',
   color: 'rgba(0,0,0,.15)',
   fontSize: 16,
@@ -27,16 +27,16 @@ const show = ref(false)
   <div>
     <h1>Watermark 水印</h1>
     <h2 class="mt30 mb10">基本使用</h2>
-    <Watermark content="Vue Amazing UI">
+    <Watermark content="Eh Antdesign UI">
       <div style="height: 360px" />
     </Watermark>
     <h2 class="mt30 mb10">平行布局水印</h2>
-    <Watermark layout="parallel" content="Vue Amazing UI">
+    <Watermark layout="parallel" content="Eh Antdesign UI">
       <div style="height: 360px" />
     </Watermark>
     <h2 class="mt30 mb10">多行水印</h2>
     <h3 class="mb10">通过 content 设置 字符串数组 指定多行文字水印内容。</h3>
-    <Watermark :content="['Vue Amazing UI', 'Hello World']">
+    <Watermark :content="['Eh Antdesign UI', 'Hello World']">
       <div style="height: 400px" />
     </Watermark>
     <h2 class="mt30 mb10">图片水印</h2>
@@ -48,7 +48,7 @@ const show = ref(false)
       <div style="height: 360px" />
     </Watermark>
     <h2 class="mt30 mb10">全屏幕水印</h2>
-    <Watermark v-if="show" fullscreen content="Vue Amazing UI"></Watermark>
+    <Watermark v-if="show" fullscreen content="Eh Antdesign UI"></Watermark>
     <Switch v-model:checked="show" />
     <h2 class="mt30 mb10">自定义配置</h2>
     <h3 class="mb10">通过自定义参数配置预览水印效果。</h3>

@@ -1,7 +1,7 @@
 # 数字输入框 InputNumber
 
 <BackTop />
-<Watermark fullscreen content="Vue Amazing UI" />
+<Watermark fullscreen content="Eh Antdesign UI" />
 
 <br/>
 
@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
-import { formatNumber } from 'vue-amazing-ui'
+import { formatNumber } from 'eh-antdesign-ui'
 const value = ref(3)
 const formatValue = ref(1000)
 watchEffect(() => {
@@ -102,7 +102,7 @@ watchEffect(() => {
 ```vue
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
-import { formatNumber } from 'vue-amazing-ui'
+import { formatNumber } from 'eh-antdesign-ui'
 const formatValue = ref(1000)
 watchEffect(() => {
   console.log('formatValue:', formatValue.value)

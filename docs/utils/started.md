@@ -20,7 +20,7 @@ import {
   downloadFile,
   formatNumber,
   toggleDark
-} from 'vue-amazing-ui'
+} from 'eh-antdesign-ui'
 </script>
 ```
 

@@ -1,7 +1,7 @@
 # 上传 Upload
 
 <BackTop />
-<Watermark fullscreen content="Vue Amazing UI" />
+<Watermark fullscreen content="Eh Antdesign UI" />
 
 <br/>
 
@@ -19,7 +19,7 @@ const files = ref([])
 const fileList = ref([
   {
     name: '1.jpg',
-    url: "https://cdn.jsdelivr.net/gh/themusecatcher/resources@0.0.5/1.jpg"
+    url: 'https://cdn.jsdelivr.net/gh/themusecatcher/resources@0.0.5/1.jpg'
   },
   {
     name: 'Markdown.pdf',
@@ -29,7 +29,7 @@ const fileList = ref([
 const imageList = ref([
   {
     name: '1.jpg',
-    url: "https://cdn.jsdelivr.net/gh/themusecatcher/resources@0.0.5/1.jpg"
+    url: 'https://cdn.jsdelivr.net/gh/themusecatcher/resources@0.0.5/1.jpg'
   }
 ])
 watchEffect(() => {

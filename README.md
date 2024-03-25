@@ -1,4 +1,4 @@
-# vue-amazing-ui
+# eh-antdesign-ui
 
 *该组件库采用 `Vue@3.4.19`+ `TypeScript@5.3.3` + `Vite@5.1.4` + `Less@4.2.0` 实现！*<br/>
 *所有组件样式 `CSS` 均使用 `box-sizing: border-box;` 模式！*<br/>
@@ -7,16 +7,16 @@
 
 ## Document & Online preview
 
-[Vue Amazing UI](https://themusecatcher.github.io/vue-amazing-ui/)
+[Eh Antdesign UI](https://zhaoyifan-admin.github.io/eh-antdesign-ui//)
 
 ## Install & Use
 
 ```bash
-pnpm i vue-amazing-ui
+pnpm i eh-antdesign-ui
 # or
-npm install vue-amazing-ui
+npm install eh-antdesign-ui
 # or
-yarn add vue-amazing-ui
+yarn add eh-antdesign-ui
 ```
 
 Import and register component
@@ -27,26 +27,26 @@ Import and register component
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import VueAmazingUI from 'vue-amazing-ui'
-import 'vue-amazing-ui/css'
+import EhAntdesignUI from 'eh-antdesign-ui'
+import 'eh-antdesign-ui/css'
 
 const app = createApp(App)
-app.use(VueAmazingUI)
+app.use(EhAntdesignUI)
 ```
 
 **Local**
 
 ```vue
 <script setup lang="ts">
-import { Button } from 'vue-amazing-ui'
-import 'vue-amazing-ui/css'
+import { Button } from 'eh-antdesign-ui'
+import 'eh-antdesign-ui/css'
 </script>
 ```
 
 ## Use CDN in Project
 
 ```html
-<script src="https://unpkg.com/vue-amazing-ui@latest"></script>
+<script src="https://unpkg.com/eh-antdesign-ui@latest"></script>
 ```
 
 ## Project
@@ -54,13 +54,13 @@ import 'vue-amazing-ui/css'
 - Get the project code
 
 ```sh
-git clone https://github.com/themusecatcher/vue-amazing-ui.git
+git clone https://github.com/zhaoyifan-admin/eh-antdesign-ui.git
 ```
 
 - Install dependencies
 
 ```sh
-cd vue-amazing-ui
+cd eh-antdesign-ui
 
 pnpm i
 ```
