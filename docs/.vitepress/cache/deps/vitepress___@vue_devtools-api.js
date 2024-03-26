@@ -2,10 +2,10 @@ import {
   isReactive,
   isRef,
   toRaw
-} from "./chunk-5XUBXWZS.js";
+} from './chunk-CKQ4TNQ3.js';
 import "./chunk-LQ2VYIYD.js";
 
-// node_modules/.pnpm/@vue+devtools-shared@7.0.15/node_modules/@vue/devtools-shared/dist/index.js
+// node_modules/@vue/devtools-shared/dist/index.js
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -35,7 +35,7 @@ var __toESM = (mod, isNodeMode, target2) => (target2 = mod != null ? __create(__
   mod
 ));
 var init_esm_shims = __esm({
-  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.3.3/node_modules/tsup/assets/esm_shims.js"() {
+  '../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.4.2/node_modules/tsup/assets/esm_shims.js'() {
     "use strict";
   }
 });
@@ -258,7 +258,7 @@ var import_rfdc = __toESM(require_rfdc(), 1);
 var deepClone = (0, import_rfdc.default)({ circles: true });
 init_esm_shims();
 
-// node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs
+// node_modules/hookable/dist/index.mjs
 function flatHooks(configHooks, hooks = {}, parentName) {
   for (const key in configHooks) {
     const subHook = configHooks[key];
@@ -463,7 +463,7 @@ function createHooks() {
   return new Hookable();
 }
 
-// node_modules/.pnpm/perfect-debounce@1.0.0/node_modules/perfect-debounce/dist/index.mjs
+// node_modules/perfect-debounce/dist/index.mjs
 var DEBOUNCE_DEFAULTS = {
   trailing: true
 };
@@ -520,7 +520,7 @@ async function _applyPromised(fn, _this, args) {
   return await fn.apply(_this, args);
 }
 
-// node_modules/.pnpm/@vue+devtools-kit@7.0.15_vue@3.4.19/node_modules/@vue/devtools-kit/dist/index.js
+// node_modules/@vue/devtools-kit/dist/index.js
 var __create2 = Object.create;
 var __defProp2 = Object.defineProperty;
 var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -550,7 +550,7 @@ var __toESM2 = (mod, isNodeMode, target9) => (target9 = mod != null ? __create2(
   mod
 ));
 var init_esm_shims2 = __esm2({
-  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.3.3/node_modules/tsup/assets/esm_shims.js"() {
+  '../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.4.2/node_modules/tsup/assets/esm_shims.js'() {
     "use strict";
   }
 });
@@ -2217,6 +2217,8 @@ var StateEditor = class {
       const section = sections.shift();
       if (object instanceof Map)
         object = object.get(section);
+      if (object instanceof Set)
+        object = Array.from(object.values())[section]
       else
         object = object[section];
       if (this.refEditor.isRef(object))
@@ -2270,7 +2272,7 @@ var StateEditor = class {
         else if (toRaw(object) instanceof Map)
           object.delete(field);
         else if (toRaw(object) instanceof Set)
-          object.delete(value);
+          object.delete(Array.from(object.values())[field])
         else
           Reflect.deleteProperty(object, field);
       }
@@ -2280,6 +2282,8 @@ var StateEditor = class {
           this.refEditor.set(target9, value);
         else if (toRaw(object) instanceof Map)
           object.set(state.newKey || field, value);
+        else if (toRaw(object) instanceof Set)
+          object.add(value)
         else
           object[state.newKey || field] = value;
       }
@@ -2291,8 +2295,22 @@ var RefStateEditor = class {
     if (isRef(ref)) {
       ref.value = value;
     } else {
+      if (ref instanceof Set && Array.isArray(value)) {
+        ref.clear()
+        value.forEach((v) => ref.add(v))
+        return
+      }
+      const currentKeys = Object.keys(value)
+      if (ref instanceof Map) {
+        const previousKeysSet2 = new Set(ref.keys())
+        currentKeys.forEach((key) => {
+          ref.set(key, Reflect.get(value, key))
+          previousKeysSet2.delete(key)
+        })
+        previousKeysSet2.forEach((key) => ref.delete(key))
+        return
+      }
       const previousKeysSet = new Set(Object.keys(ref));
-      const currentKeys = Object.keys(value);
       currentKeys.forEach((key) => {
         Reflect.set(ref, key, Reflect.get(value, key));
         previousKeysSet.delete(key);
@@ -2375,7 +2393,8 @@ function initStateFactory() {
     tabs: [],
     commands: [],
     vitePluginDetected: false,
-    activeAppRecordId: null
+    activeAppRecordId: null,
+    highPerfModeEnabled: false,
   };
 }
 var _a4;
@@ -2549,12 +2568,15 @@ function onDevToolsClientConnected(fn) {
     });
   });
 }
+
+init_esm_shims2()
 export {
   addCustomCommand,
   addCustomTab,
   onDevToolsClientConnected,
   onDevToolsConnected,
   removeCustomCommand,
-  setupDevToolsPlugin
+  setupDevToolsPlugin,
+  setupDevToolsPlugin as setupDevtoolsPlugin,
 };
 //# sourceMappingURL=vitepress___@vue_devtools-api.js.map

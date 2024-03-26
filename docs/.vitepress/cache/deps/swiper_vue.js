@@ -10,7 +10,7 @@ import {
   provide,
   ref,
   watch
-} from "./chunk-5XUBXWZS.js";
+} from './chunk-CKQ4TNQ3.js';
 import {
   animateCSSModeScroll,
   createElement,
@@ -30,10 +30,10 @@ import {
   now,
   setCSSProperty,
   showWarning
-} from "./chunk-IUQD73CY.js";
+} from './chunk-UOTUWNJA.js';
 import "./chunk-LQ2VYIYD.js";
 
-// node_modules/.pnpm/swiper@11.0.6/node_modules/swiper/shared/swiper-core.mjs
+// node_modules/swiper/shared/swiper-core.mjs
 var support;
 function calcSupport() {
   const window2 = getWindow();
@@ -2027,7 +2027,7 @@ function loopFix(_temp) {
         if (byMousewheel) {
           swiper.setTranslate(swiper.translate - diff);
         } else {
-          swiper.slideTo(activeIndex + slidesPrepended, 0, false, true);
+          swiper.slideTo(activeIndex + Math.ceil(slidesPrepended), 0, false, true)
           if (setTranslate2) {
             swiper.touchEventsData.startTranslate = swiper.touchEventsData.startTranslate - diff;
             swiper.touchEventsData.currentTranslate = swiper.touchEventsData.currentTranslate - diff;
@@ -3838,7 +3838,7 @@ Object.keys(prototypes).forEach((prototypeGroup) => {
 });
 Swiper.use([Resize, Observer]);
 
-// node_modules/.pnpm/swiper@11.0.6/node_modules/swiper/shared/update-swiper.mjs
+// node_modules/swiper/shared/update-swiper.mjs
 var paramsList = [
   "eventsPrefix",
   "injectStyles",
@@ -4196,7 +4196,7 @@ function updateSwiper(_ref) {
   swiper.update();
 }
 
-// node_modules/.pnpm/swiper@11.0.6/node_modules/swiper/shared/update-on-virtual-data.mjs
+// node_modules/swiper/shared/update-on-virtual-data.mjs
 function getParams(obj, splitEvents) {
   if (obj === void 0) {
     obj = {};
@@ -4329,7 +4329,7 @@ var updateOnVirtualData = (swiper) => {
   }
 };
 
-// node_modules/.pnpm/swiper@11.0.6/node_modules/swiper/swiper-vue.mjs
+// node_modules/swiper/swiper-vue.mjs
 function getChildren(originalSlots, slidesRef, oldSlidesRef) {
   if (originalSlots === void 0) {
     originalSlots = {};
