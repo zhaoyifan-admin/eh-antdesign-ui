@@ -59,7 +59,7 @@ function onClose (e: MouseEvent):void {
   <div ref="wrapper" class="m-alert-wrapper">
     <div
       ref="alert"
-      class="m-alert"
+      class="m-alert font-14"
       :class="[`${type}`, {'width-description': showDesc}]">
       <template v-if="showIcon">
         <span class="m-icon" v-if="!showDesc">
@@ -71,7 +71,7 @@ function onClose (e: MouseEvent):void {
             <svg focusable="false" v-else-if="type==='error'" class="u-icon" data-icon="close-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true" viewBox="64 64 896 896"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"></path></svg>
           </slot>
         </span>
-        <span class="m-big-icon" v-else>
+        <span class="m-big-icon font-24" v-else>
           <slot name="icon">
             <img v-if="icon" :src="icon" class="u-big-icon-img" />
             <svg focusable="false" v-else-if="type==='info'" class="u-icon" data-icon="info-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true" viewBox="64 64 896 896"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"></path></svg>
@@ -89,7 +89,7 @@ function onClose (e: MouseEvent):void {
           <slot name="description">{{ description }}</slot>
         </div>
       </div>
-      <a class="m-close" @click="onClose" v-if="closable">
+      <a class="m-close font-12" @click="onClose" v-if="closable">
         <slot name="closeText">
           <span v-if="closeText">{{ closeText }}</span>
           <svg v-else focusable="false" class="u-close" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true" viewBox="64 64 896 896"><path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path></svg>
@@ -105,21 +105,21 @@ function onClose (e: MouseEvent):void {
 .m-alert {
   padding: 8px 12px;
   color: rgba(0, 0, 0, .88);
-  font-size: 14px;
   line-height: 1.5714285714285714;
   position: relative;
   display: flex;
   align-items: center;
   word-break: break-all;
-  border-radius: 8px;
+  border-radius: 5px;
   .m-icon {
     margin-inline-end: 8px;
     line-height: 0;
   }
   .m-big-icon {
     margin-inline-end: 12px;
-    font-size: 24px;
     line-height: 0;
+    border-radius: 50%;
+    overflow: hidden;
   }
   .u-icon-img {
     display: inline-block;
@@ -140,7 +140,6 @@ function onClose (e: MouseEvent):void {
   }
   .m-close {
     margin-inline-start: 8px;
-    font-size: 12px;
     color: rgba(0, 0, 0, .45);
     line-height: 12px;
     cursor: pointer;
@@ -197,13 +196,12 @@ function onClose (e: MouseEvent):void {
 }
 .width-description {
   align-items: flex-start;
-  padding-inline: 24px;
-  padding-block: 20px;
+  padding-inline: 16px;
+  padding-block: 10px;
   .u-message {
     display: block;
     margin-bottom: 8px;
     color: rgba(0, 0, 0, .88);
-    font-size: 16px;
   }
   .u-description {
     display: block;

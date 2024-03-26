@@ -47,6 +47,7 @@
     "naive-ui": "^2.38.0",
     "postcss-pxtorem": "^6.1.0",
     "qrcode": "^1.5.3",
+    "sass": "^1.72.0",
     "swiper": "^11.0.6",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0"

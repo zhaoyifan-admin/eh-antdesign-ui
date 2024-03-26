@@ -1,4 +1,5 @@
 import './less/global.less'
+import './less/common.scss'
 import {
   dateFormat,
   requestAnimationFrame,
