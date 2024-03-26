@@ -16,9 +16,9 @@
 <script setup lang="ts">
 const routes = [
     {
-      path: '/first' // 路由地址
-      query: { id: 1, tab: 2 }, // 路由参数
-      name: '一级路由' // 路由名称
+      path: '/first',
+      query: { id: 1, tab: 2 },
+      name: '一级路由'
     },
     {
       path: '/second',

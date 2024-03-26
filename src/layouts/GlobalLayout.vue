@@ -19,7 +19,7 @@ onMounted(() => {
   // 以上述配置开始观察目标节点
   observer.value.observe(document.documentElement, config)
   themeDark.value = document.documentElement.classList.contains('dark')
-  if (!themeDark.value) { // 默认开启暗黑模式
+  if (themeDark.value) { // 默认开启暗黑模式
     toggleDark()
   }
 })
