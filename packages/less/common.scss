@@ -1,0 +1,48 @@
+/* 字体大小全局样式
+------------------------------- */
+@for $i from 5 through 99 {
+  .font-#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+/* 外边距、内边距全局样式
+------------------------------- */
+@for $i from 0 through 999 {
+  .mt-#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .m-inline-#{$i} {
+    margin-inline: #{$i}px !important;
+  }
+  .m-block-#{$i} {
+    margin-block: #{$i}px !important;
+  }
+  .pt-#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i}px !important;
+  }
+  .p-inline-#{$i} {
+    padding-inline: #{$i}px !important;
+  }
+  .p-block-#{$i} {
+    padding-block: #{$i}px !important;
+  }
+}
