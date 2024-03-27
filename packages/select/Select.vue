@@ -179,9 +179,9 @@ function onChange (value: string|number, label: string, index: number) { // é€‰ä
 }
 </script>
 <template>
-  <div class="m-select" :style="`height: ${height}px;`">
+  <div class="eh-select" :style="`height: ${height}px;`">
     <div
-      :class="['m-select-wrap', {'hover': !disabled, 'focus': showOptions, 'disabled': disabled}]"
+      :class="['eh-select-wrap', {'hover': !disabled, 'focus': showOptions, 'disabled': disabled}]"
       :style="`width: ${width}px; height: ${height}px;`"
       tabindex="1"
       ref="selectRef"
@@ -209,7 +209,7 @@ function onChange (value: string|number, label: string, index: number) { // é€‰ä
     <TransitionGroup name="fade" tag="div">
       <div
         v-show="showOptions && filterOptions && filterOptions.length"
-        class="m-options-panel"
+        class="eh-options-panel"
         @mouseenter="onEnter"
         @mouseleave="onLeave"
         key="1"
@@ -226,7 +226,7 @@ function onChange (value: string|number, label: string, index: number) { // é€‰ä
       <div
         v-show="showOptions && filterOptions && !filterOptions.length"
         key="2"
-        class="m-empty-wrap"
+        class="eh-empty-wrap"
         :style="`top: ${height + 4}px; width: ${width}px;`">
         <Empty image="2" key="2" />
       </div>
@@ -234,7 +234,7 @@ function onChange (value: string|number, label: string, index: number) { // é€‰ä
   </div>
 </template>
 <style lang="less" scoped>
-.m-select {
+.eh-select {
   position: relative;
   display: inline-block;
   font-size: 14px;
@@ -256,7 +256,8 @@ function onChange (value: string|number, label: string, index: number) { // é€‰ä
   transform: scaleY(1);
   opacity: 0;
 }
-.m-select-wrap {
+
+.eh-select-wrap {
   position: relative;
   z-index: 8;
   display: inline-block;
@@ -344,7 +345,8 @@ function onChange (value: string|number, label: string, index: number) { // é€‰ä
   user-select: none;
   cursor: not-allowed;
 }
-.m-options-panel {
+
+.eh-options-panel {
   position: absolute;
   z-index: 9;
   overflow: auto;
@@ -379,7 +381,8 @@ function onChange (value: string|number, label: string, index: number) { // é€‰ä
     cursor: not-allowed;
   }
 }
-.m-empty-wrap {
+
+.eh-empty-wrap {
   position: absolute;
   z-index: 9;
   height: 100px;

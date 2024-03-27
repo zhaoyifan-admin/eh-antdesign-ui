@@ -62,9 +62,9 @@ const groupRows = computed(() => {
 })
 watchEffect(() => {
   if (props.bordered) {
-    children.value = Array.from(view.value.children).filter((element: any) => element.className === 'm-desc-item-bordered')
+    children.value = Array.from(view.value.children).filter((element: any) => element.className === 'eh-desc-item-bordered')
   } else {
-    children.value = Array.from(view.value.children).filter((element: any) => element.className === 'm-desc-item')
+    children.value = Array.from(view.value.children).filter((element: any) => element.className === 'eh-desc-item')
   }
 }, { flush: 'post' })
 watch(children, (to) => {
@@ -171,8 +171,8 @@ function setStyle(element: any, style: any) {
 }
 </script>
 <template>
-  <div class="m-desc" :class="`desc-${size}`">
-    <div class="m-header">
+  <div class="eh-desc" :class="`desc-${size}`">
+    <div class="eh-header">
       <div class="u-title">
         <slot name="title">{{ title }}</slot>
       </div>
@@ -183,7 +183,7 @@ function setStyle(element: any, style: any) {
     <div ref="view" v-show="false">
       <slot></slot>
     </div>
-    <div class="m-desc-view" :class="{'m-bordered': bordered}">
+    <div class="eh-desc-view" :class="{'eh-bordered': bordered}">
       <table>
         <tbody v-if="!bordered">
           <tr v-for="(items, row) in groupItems" :key="row">
@@ -209,11 +209,12 @@ function setStyle(element: any, style: any) {
   </div>
 </template>
 <style lang="less" scoped>
-.m-desc {
+.eh-desc {
   font-size: 14px;
   color: rgba(0, 0, 0, .88);
   line-height: 1.5714285714285714;
-  .m-header {
+
+  .eh-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -233,7 +234,8 @@ function setStyle(element: any, style: any) {
       font-size: 14px;
     }
   }
-  .m-desc-view {
+
+  .eh-desc-view {
     width: 100%;
     border-radius: 8px;
     table {
@@ -254,7 +256,8 @@ function setStyle(element: any, style: any) {
       }
     }
   }
-  .m-bordered {
+
+  .eh-bordered {
     border: 1px solid rgba(5, 5, 5, .06);
     table {
       table-layout: auto;
@@ -297,12 +300,13 @@ function setStyle(element: any, style: any) {
   }
 }
 .desc-middle {
-  .m-desc-view {
+  .eh-desc-view {
     .u-item-td {
       padding-bottom: 12px !important;
     }
   }
-  .m-bordered {
+
+  .eh-bordered {
     :deep(.u-label-th) {
       padding: 12px 24px !important;
     }
@@ -312,12 +316,13 @@ function setStyle(element: any, style: any) {
   }
 }
 .desc-small {
-  .m-desc-view {
+  .eh-desc-view {
     .u-item-td {
       padding-bottom: 8px !important;
     }
   }
-  .m-bordered {
+
+  .eh-bordered {
     :deep(.u-label-th) {
       padding: 8px 16px !important;
     }

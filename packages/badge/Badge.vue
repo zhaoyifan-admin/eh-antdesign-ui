@@ -60,7 +60,7 @@ const showCount = computed(() => {
 })
 </script>
 <template>
-  <div class="m-badge" :class="{'badge-status': status}">
+  <div class="eh-badge" :class="{'badge-status': status}">
     <template v-if="status||color">
       <span class="u-status-dot" :class="[`status-${status||color}`, {'dot-ripple': ripple}]" :style="customStyle"></span>
       <span class="u-status-text">
@@ -73,18 +73,18 @@ const showCount = computed(() => {
       </span>
       <span
         v-if="showCount"
-        class="m-count"
+        class="eh-count"
         :class="{'only-number': !showContent}">
         <slot name="count"></slot>
       </span>
       <Transition name="zoom" v-else>
         <div
           v-show="showZero || count !== 0 || dot"
-          class="m-badge-count"
+          class="eh-badge-count"
           :class="{'small-num': count < 10, 'only-number': !showContent, 'only-dot': count === 0 && !showZero}"
           :style="countStyle"
           :title="title || String(count)">
-          <span v-if="!dot" class="m-number" style="transition: none 0s ease 0s;">
+          <span v-if="!dot" class="eh-number" style="transition: none 0s ease 0s;">
             <span class="u-number">{{ count > max ? max + '+' : count }}</span>
           </span>
         </div>
@@ -119,7 +119,8 @@ const showCount = computed(() => {
     opacity: 0;
   }
 }
-.m-badge {
+
+.eh-badge {
   font-size: 14px;
   color: rgba(0, 0, 0, .88);
   line-height: 1;
@@ -241,15 +242,17 @@ const showCount = computed(() => {
     color: rgba(0, 0, 0, .88);
     font-size: 14px;
   }
-  .m-count {
+
+  .eh-count {
     position: absolute;
     top: 0;
     inset-inline-end: 0;
     transform: translate(50%, -50%);
     transform-origin: 100% 0%;
   }
-  .m-badge-count {
-    .m-count();
+
+  .eh-badge-count {
+    .eh-count();
     overflow: hidden;
     padding: 0 8px;
     z-index: auto;
@@ -265,7 +268,8 @@ const showCount = computed(() => {
     border-radius: 10px;
     box-shadow: 0 0 0 1px #ffffff;
     transition: background .2s;
-    .m-number {
+
+    .eh-number {
       position: relative;
       display: inline-block;
       height: 20px;

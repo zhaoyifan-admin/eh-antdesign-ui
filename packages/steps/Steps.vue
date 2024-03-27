@@ -45,9 +45,9 @@ function onChange (index: number) { // 点击切换选择步骤
 }
 </script>
 <template>
-  <div class="m-steps-area" :style="`width: ${totalWidth};`">
-    <div class="m-steps">
-      <div :class="['m-steps-item',
+  <div class="eh-steps-area" :style="`width: ${totalWidth};`">
+    <div class="eh-steps">
+      <div :class="['eh-steps-item',
           {
             'finish': currentStep > index + 1,
             'process': currentStep === index + 1,
@@ -55,12 +55,12 @@ function onChange (index: number) { // 点击切换选择步骤
           }
         ]"
         v-for="(step, index) in steps" :key="index">
-        <div class="m-info-wrap" @click="onChange(index + 1)">
-          <div class="m-steps-icon">
+        <div class="eh-info-wrap" @click="onChange(index + 1)">
+          <div class="eh-steps-icon">
             <span class="u-num" v-if="currentStep <= index + 1">{{ index + 1 }}</span>
             <svg class="u-icon" v-else viewBox="64 64 896 896" data-icon="check" aria-hidden="true" focusable="false"><path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path></svg>
           </div>
-          <div class="m-steps-content">
+          <div class="eh-steps-content">
             <div class="u-steps-title">{{ step.title }}</div>
             <div class="u-steps-description" v-show="step.description" :style="`max-width: ${descMaxWidth}px;`">{{ step.description }}</div>
           </div>
@@ -70,11 +70,13 @@ function onChange (index: number) { // 点击切换选择步骤
   </div>
 </template>
 <style lang="less" scoped>
-.m-steps-area {
+.eh-steps-area {
   margin: 0 auto;
-  .m-steps {
+
+  .eh-steps {
     display: flex;
-    .m-steps-item {
+
+    .eh-steps-item {
       display: inline-block;
       overflow: hidden;
       font-size: 16px;
@@ -96,9 +98,11 @@ function onChange (index: number) { // 点击切换选择步骤
           }
         }
       }
-      .m-info-wrap {
+
+      .eh-info-wrap {
         display: inline-block;
-        .m-steps-icon {
+
+        .eh-steps-icon {
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -124,7 +128,8 @@ function onChange (index: number) { // 点击切换选择步骤
             height: 16px;
           }
         }
-        .m-steps-content {
+
+        .eh-steps-content {
           display: inline-block;
           vertical-align: top;
           .u-steps-title {
@@ -146,13 +151,15 @@ function onChange (index: number) { // 点击切换选择步骤
       }
     }
     .finish {
-      .m-info-wrap {
+      .eh-info-wrap {
         cursor: pointer;
-        .m-steps-icon {
+
+        .eh-steps-icon {
           background-color: #e6f4ff;
           border-color: #e6f4ff;
         }
-        .m-steps-content {
+
+        .eh-steps-content {
           .u-steps-title {
             color: rgba(0, 0, 0, .88);
             &::after {
@@ -164,10 +171,11 @@ function onChange (index: number) { // 点击切换选择步骤
           }
         }
         &:hover {
-          .m-steps-icon {
+          .eh-steps-icon {
             border-color: @themeColor;
           }
-          .m-steps-content {
+
+          .eh-steps-content {
             .u-steps-title {
               color: @themeColor;
             }
@@ -179,8 +187,8 @@ function onChange (index: number) { // 点击切换选择步骤
       }
     }
     .process {
-      .m-info-wrap {
-        .m-steps-icon {
+      .eh-info-wrap {
+        .eh-steps-icon {
           background: @themeColor;
           border: 1px solid rgba(0, 0, 0, .25);
           border-color: @themeColor;
@@ -188,7 +196,8 @@ function onChange (index: number) { // 点击切换选择步骤
             color: #fff;
           }
         }
-        .m-steps-content {
+
+        .eh-steps-content {
           .u-steps-title {
             color: rgba(0, 0, 0, .88);
           }
@@ -199,16 +208,17 @@ function onChange (index: number) { // 点击切换选择步骤
       }
     }
     .wait {
-      .m-info-wrap {
+      .eh-info-wrap {
         cursor: pointer;
         &:hover {
-          .m-steps-icon {
+          .eh-steps-icon {
             border-color: @themeColor;
             .u-num {
               color: @themeColor;
             }
           }
-          .m-steps-content {
+
+          .eh-steps-content {
             .u-steps-title {
               color: @themeColor;
             }

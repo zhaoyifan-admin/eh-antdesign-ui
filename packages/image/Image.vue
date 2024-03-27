@@ -249,10 +249,10 @@ function onSwitchRight () {
 }
 </script>
 <template>
-  <div class="m-image-wrap">
+  <div class="eh-image-wrap">
     <Space :size="gap">
       <div
-        class="m-image"
+        class="eh-image"
         :class="{bordered: bordered, 'image-hover-mask': complete[index]}"
         :style="`width: ${imageWidth}; height: ${imageHeight};`"
         v-for="(image, index) in images" :key="index"
@@ -260,8 +260,8 @@ function onSwitchRight () {
         <Spin :spinning="!complete[index]" indicator="dynamic-circle">
           <img class="u-image" :style="`width: calc(${imageWidth} - 2px); height: calc(${imageHeight} - 2px); object-fit: ${fit};`" @load="onComplete(index)" :src="image.src" :alt="image.name" />
         </Spin>
-        <div class="m-image-mask" @click="onPreview(index)">
-          <div class="m-image-mask-info">
+        <div class="eh-image-mask" @click="onPreview(index)">
+          <div class="eh-image-mask-info">
             <svg class="u-eye" focusable="false" data-icon="eye" aria-hidden="true" viewBox="64 64 896 896"><path d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"></path></svg>
             <p class="u-pre">
               <slot name="preview">{{ preview }}</slot>
@@ -271,12 +271,12 @@ function onSwitchRight () {
       </div>
     </Space>
     <Transition name="mask">
-      <div class="m-preview-mask" v-show="showPreview"></div>
+      <div class="eh-preview-mask" v-show="showPreview"></div>
     </Transition>
     <Transition name="preview">
-      <div class="m-preview-wrap" v-show="showPreview" @click.self="onClose" @wheel.prevent="onWheel">
-        <div class="m-preview-body">
-          <div class="m-preview-operations">
+      <div class="eh-preview-wrap" v-show="showPreview" @click.self="onClose" @wheel.prevent="onWheel">
+        <div class="eh-preview-body">
+          <div class="eh-preview-operations">
             <a class="u-name" :href="images[previewIndex].src" target="_blank" :title="getImageName(images[previewIndex])">{{ getImageName(images[previewIndex]) }}</a>
             <p class="u-preview-progress" v-show="Array.isArray(src)">{{ (previewIndex + 1) }} / {{ imageCount }}</p>
             <div class="u-preview-operation" title="关闭" @click="onClose">
@@ -305,7 +305,7 @@ function onSwitchRight () {
             </div>
           </div>
           <div
-            class="m-preview-image"
+            class="eh-preview-image"
             :style="`transform: translate3d(${dragX}px, ${dragY}px, 0px);`">
             <Spin
               :spinning="!loaded[index]"
@@ -324,13 +324,13 @@ function onSwitchRight () {
           </div>
           <template v-if="imageCount > 1">
             <div
-              class="m-switch-left"
+              class="eh-switch-left"
               :class="{'u-switch-disabled': previewIndex === 0 && !loop}"
               @click="onSwitchLeft">
               <svg focusable="false" class="u-switch" data-icon="left" aria-hidden="true" viewBox="64 64 896 896"><path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path></svg>
             </div>
             <div
-              class="m-switch-right"
+              class="eh-switch-right"
               :class="{'u-switch-disabled': previewIndex === imageCount - 1 && !loop}"
               @click="onSwitchRight">
               <svg focusable="false" class="u-switch" data-icon="right" aria-hidden="true" viewBox="64 64 896 896"><path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path></svg>
@@ -355,11 +355,12 @@ function onSwitchRight () {
   opacity: 0;
   transform: scale(0);
 }
-.m-image-wrap {
+
+.eh-image-wrap {
   display: inline-block;
   .image-hover-mask {
     &:hover {
-      .m-image-mask {
+      .eh-image-mask {
         opacity: 1;
         pointer-events: auto;
       }
@@ -368,7 +369,8 @@ function onSwitchRight () {
   .bordered {
     border: 1px solid #d9d9d9;
   }
-  .m-image {
+
+  .eh-image {
     position: relative;
     display: inline-block;
     vertical-align: top;
@@ -380,7 +382,8 @@ function onSwitchRight () {
       height: 100%;
       vertical-align: middle;
     }
-    .m-image-mask {
+
+    .eh-image-mask {
       // top right bottom left 简写为 inset: 0
       // insert 无论元素的书写模式、行内方向和文本朝向如何，其所定义的都不是逻辑偏移而是实体偏移
       position: absolute;
@@ -394,7 +397,8 @@ function onSwitchRight () {
       opacity: 0;
       pointer-events: none;
       transition: opacity .3s;
-      .m-image-mask-info {
+
+      .eh-image-mask-info {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -415,14 +419,16 @@ function onSwitchRight () {
       }
     }
   }
-  .m-preview-mask {
+
+  .eh-preview-mask {
     position: fixed;
     inset: 0;
     z-index: 1000;
     height: 100%;
     background-color: rgba(0, 0, 0, .45);
   }
-  .m-preview-wrap {
+
+  .eh-preview-wrap {
     position: fixed;
     top: 0;
     left: 0;
@@ -433,12 +439,14 @@ function onSwitchRight () {
     z-index: 1080;
     height: 100%;
     text-align: center;
-    .m-preview-body {
+
+    .eh-preview-body {
       position: absolute;
       inset: 0;
       overflow: hidden;
       pointer-events: none;
-      .m-preview-operations {
+
+      .eh-preview-operations {
         position: fixed;
         width: 100%;
         z-index: 9;
@@ -499,7 +507,8 @@ function onSwitchRight () {
           }
         }
       }
-      .m-preview-image {
+
+      .eh-preview-image {
         position: absolute;
         z-index: 3;
         inset: 0;
@@ -518,7 +527,8 @@ function onSwitchRight () {
           pointer-events: auto;
         }
       }
-      .m-switch-left {
+
+      .eh-switch-left {
         inset-inline-start: 12px;
         position: fixed;
         inset-block-start: 50%;
@@ -545,7 +555,8 @@ function onSwitchRight () {
           fill: #FFF;
         }
       }
-      .m-switch-right {
+
+      .eh-switch-right {
         inset-inline-end: 12px;
         position: fixed;
         inset-block-start: 50%;

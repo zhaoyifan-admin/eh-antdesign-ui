@@ -121,15 +121,15 @@ function onWheel (e: WheelEvent) {
 }
 </script>
 <template>
-  <div class="m-tabs">
-    <div class="m-tabs-nav">
+  <div class="eh-tabs">
+    <div class="eh-tabs-nav">
       <div
         ref="wrap"
-        class="m-tabs-nav-wrap"
+        class="eh-tabs-nav-wrap"
         :class="{'tabs-center': centered, 'before-shadow-active': scrollLeft > 0, 'after-shadow-active': scrollLeft < scrollMax}">
         <div
           ref="nav"
-          class="m-tabs-nav-list"
+          class="eh-tabs-nav-list"
           @wheel="showWheel ? onWheel($event) : () => false"
           :style="`transform: translate(${-scrollLeft}px, 0)`">
           <div
@@ -150,9 +150,9 @@ function onWheel (e: WheelEvent) {
         </div>
       </div>
     </div>
-    <div class="m-tabs-page">
+    <div class="eh-tabs-page">
       <div
-        class="m-tabs-content"
+        class="eh-tabs-content"
         v-show="activeKey === page.key"
         v-for="page in tabPages" :key="page.key">
         <slot :name="page.key">{{ page.content }}</slot>
@@ -161,12 +161,12 @@ function onWheel (e: WheelEvent) {
   </div>
 </template>
 <style lang="less" scoped>
-.m-tabs {
+.eh-tabs {
   display: flex;
   color: rgba(0, 0, 0, .88);
   line-height: 1.5714285714285714;
   flex-direction: column; // 子元素将垂直显示，正如一个列一样。
-  .m-tabs-nav {
+  .eh-tabs-nav {
     position: relative;
     display: flex;
     flex: none;
@@ -180,7 +180,8 @@ function onWheel (e: WheelEvent) {
       border-bottom: 1px solid rgba(5, 5, 5, .06);
       content: '';
     }
-    .m-tabs-nav-wrap {
+
+    .eh-tabs-nav-wrap {
       position: relative;
       display: flex;
       flex: auto;
@@ -210,7 +211,8 @@ function onWheel (e: WheelEvent) {
         right: 0;
         box-shadow: inset -10px 0 8px -8px rgba(0, 0, 0, .08);
       }
-      .m-tabs-nav-list {
+
+      .eh-tabs-nav-list {
         position: relative;
         display: flex;
         .u-tab {
@@ -293,12 +295,14 @@ function onWheel (e: WheelEvent) {
       }
     }
   }
-  .m-tabs-page {
+
+  .eh-tabs-page {
     font-size: 14px;
     flex: auto;
     min-width: 0;
     min-height: 0;
-    .m-tabs-content {
+
+    .eh-tabs-content {
       position: relative;
       width: 100%;
       height: 100%;

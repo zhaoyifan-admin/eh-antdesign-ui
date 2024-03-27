@@ -14,7 +14,8 @@ withDefaults(defineProps<Props>(), {
 })
 </script>
 <template>
-  <div class="m-desc-item" :data-span="span" :data-label-style="JSON.stringify(labelStyle)" :data-content-style="JSON.stringify(contentStyle)">
+  <div class="eh-desc-item" :data-span="span" :data-label-style="JSON.stringify(labelStyle)"
+       :data-content-style="JSON.stringify(contentStyle)">
     <span class="u-label">
       <slot name="label">{{ label }}</slot>
     </span>
@@ -22,7 +23,8 @@ withDefaults(defineProps<Props>(), {
       <slot></slot>
     </span>
   </div>
-  <div class="m-desc-item-bordered" :data-span="span" :data-label-style="JSON.stringify(labelStyle)" :data-content-style="JSON.stringify(contentStyle)">
+  <div class="eh-desc-item-bordered" :data-span="span" :data-label-style="JSON.stringify(labelStyle)"
+       :data-content-style="JSON.stringify(contentStyle)">
     <th class="u-label-th">
       <slot name="label">{{ label }}</slot>
     </th>
@@ -32,7 +34,7 @@ withDefaults(defineProps<Props>(), {
   </div>
 </template>
 <style lang="less" scoped>
-.m-desc-item {
+.eh-desc-item {
   display: flex;
   .u-label {
     display: inline-flex;

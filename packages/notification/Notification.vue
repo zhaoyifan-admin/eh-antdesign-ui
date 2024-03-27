@@ -123,17 +123,17 @@ function onClose (index: number) {
 </script>
 <template>
   <div
-    :class="['m-notification-wrapper', place]"
+    :class="['eh-notification-wrapper', place]"
     :style="`top: ${['topRight', 'topLeft'].includes(place) ? top : 'auto'}px; bottom: ${['bottomRight', 'bottomLeft'].includes(place) ? bottom : ''}px;`">
     <TransitionGroup :name="['topRight', 'bottomRight'].includes(place) ? 'right':'left'">
       <div
         ref="notification"
-        class="m-notification"
+        class="eh-notification"
         v-show="!hideIndex.includes(index)"
         @mouseenter="onEnter(index)"
         @mouseleave="onLeave(index)"
         v-for="(data, index) in notificationData" :key="index">
-        <div class="m-notification-content">
+        <div class="eh-notification-content">
           <svg v-if="data.mode==='info'" class="u-svg" :style="`fill: ${ColorStyle[data.mode]}`" viewBox="64 64 896 896" data-icon="info-circle" aria-hidden="true" focusable="false"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M464 336a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"></path></svg>
           <svg v-if="data.mode==='success'" class="u-svg" :style="`fill: ${ColorStyle[data.mode]}`" viewBox="64 64 896 896" data-icon="check-circle" aria-hidden="true" focusable="false"><path d="M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0 0 51.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z"></path><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path></svg>
           <svg v-if="data.mode==='warning'" class="u-svg" :style="`fill: ${ColorStyle[data.mode]}`" viewBox="64 64 896 896" data-icon="exclamation-circle" aria-hidden="true" focusable="false"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"></path></svg>
@@ -192,20 +192,23 @@ function onClose (index: number) {
   margin-left: 24px;
   left: 0;
 }
-.m-notification-wrapper {
+
+.eh-notification-wrapper {
   position: fixed;
   z-index: 999; // 突出显示该层级
   color: rgba(0, 0, 0, .88);
   font-size: 14px;
   line-height: 1.5714285714285714;
   margin-inline-end: 24px;
-  .m-notification {
+
+  .eh-notification {
     overflow: hidden;
     margin-bottom: 16px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 6px 16px 0 rgba(0, 0, 0, .08), 0 3px 6px -4px rgba(0, 0, 0, .12), 0 9px 28px 8px rgba(0, 0, 0, .05);
-    .m-notification-content {
+
+    .eh-notification-content {
       position: relative;
       width: 384px;
       max-width: calc(100vw - 48px);

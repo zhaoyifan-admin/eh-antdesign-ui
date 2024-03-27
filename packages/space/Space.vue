@@ -39,14 +39,14 @@ const gap = computed(() => {
 </script>
 <template>
   <div
-    class="m-space"
+    class="eh-space"
     :class="[`${direction} ${align}`, {wrap: wrap}]"
     :style="`width: ${spaceWidth}; gap: ${gap}; margin-bottom: -${Array.isArray(props.size) && wrap ? props.size[1] : 0}px;`">
     <slot></slot>
   </div>
 </template>
 <style lang="less" scoped>
-.m-space {
+.eh-space {
   display: inline-flex;
   font-size: 14px;
   color: rgba(0, 0, 0, .88);

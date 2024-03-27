@@ -15,10 +15,10 @@ withDefaults(defineProps<Props>(), {
 })
 </script>
 <template>
-  <div :class="`m-spin-wrap ${size}`" :style="`--color: ${color};`">
-    <div class="m-spin" v-show="spinning">
-      <div class="m-spin-box">
-        <div class="m-spin-dot" v-if="indicator==='dot'">
+  <div :class="`eh-spin-wrap ${size}`" :style="`--color: ${color};`">
+    <div class="eh-spin" v-show="spinning">
+      <div class="eh-spin-box">
+        <div class="eh-spin-dot" v-if="indicator==='dot'">
           <span class="u-dot-item"></span>
           <span class="u-dot-item"></span>
           <span class="u-dot-item"></span>
@@ -26,19 +26,19 @@ withDefaults(defineProps<Props>(), {
         </div>
         <div v-if="indicator==='quarter-circle'" class="u-quarter-circle"></div>
         <div v-if="indicator==='three-quarters-circle'" class="u-three-quarters-circle"></div>
-        <div v-if="indicator==='dynamic-circle'" class="m-dynamic-circle">
+        <div v-if="indicator==='dynamic-circle'" class="eh-dynamic-circle">
           <svg  class="circular" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none"></circle></svg>
         </div>
         <p class="u-tip" v-show="tip">{{ tip }}</p>
       </div>
     </div>
-    <div :class="['m-spin-content', {'m-spin-mask': spinning}]">
+    <div :class="['eh-spin-content', {'eh-spin-mask': spinning}]">
       <slot></slot>
     </div>
   </div>
 </template>
 <style lang="less" scoped>
-.m-spin-wrap {
+.eh-spin-wrap {
   position: relative;
   height: 100%;
   width: 100%;
@@ -47,7 +47,8 @@ withDefaults(defineProps<Props>(), {
   justify-content: center;
   pointer-events: none;
 }
-.m-spin {
+
+.eh-spin {
   position: absolute;
   top: 0;
   left: 0;
@@ -57,10 +58,12 @@ withDefaults(defineProps<Props>(), {
   align-items: center;
   justify-content: center;
   z-index: 9;
-  .m-spin-box {
+
+  .eh-spin-box {
     text-align: center;
     line-height: 0;
-    .m-spin-dot {
+
+    .eh-spin-dot {
       position: relative;
       display: inline-block;
       transform: rotate(45deg);
@@ -132,7 +135,8 @@ withDefaults(defineProps<Props>(), {
         transform: rotate(360deg);
       }
     }
-    .m-dynamic-circle {
+
+    .eh-dynamic-circle {
       display: inline-block;
       .circular {
         display: inline-block;
@@ -174,8 +178,8 @@ withDefaults(defineProps<Props>(), {
   }
 }
 .large {
-  .m-spin .m-spin-box {
-    .m-spin-dot {
+  .eh-spin .eh-spin-box {
+    .eh-spin-dot {
       width: 36px;
       height: 36px;
       .u-dot-item {
@@ -193,7 +197,8 @@ withDefaults(defineProps<Props>(), {
       height: 40px;
       border-width: 4px;
     }
-    .m-dynamic-circle {
+
+    .eh-dynamic-circle {
       width: 42px;
       height: 42px;
     }
@@ -206,8 +211,8 @@ withDefaults(defineProps<Props>(), {
   }
 }
 .default {
-  .m-spin .m-spin-box {
-    .m-spin-dot {
+  .eh-spin .eh-spin-box {
+    .eh-spin-dot {
       width: 28px;
       height: 28px;
       .u-dot-item {
@@ -225,7 +230,8 @@ withDefaults(defineProps<Props>(), {
       height: 32px;
       border-width: 3px;
     }
-    .m-dynamic-circle {
+
+    .eh-dynamic-circle {
       width: 34px;
       height: 34px;
     }
@@ -238,8 +244,8 @@ withDefaults(defineProps<Props>(), {
   }
 }
 .small {
-  .m-spin .m-spin-box {
-    .m-spin-dot {
+  .eh-spin .eh-spin-box {
+    .eh-spin-dot {
       width: 20px;
       height: 20px;
       .u-dot-item {
@@ -257,7 +263,8 @@ withDefaults(defineProps<Props>(), {
       height: 24px;
       border-width: 2px;
     }
-    .m-dynamic-circle {
+
+    .eh-dynamic-circle {
       width: 26px;
       height: 26px;
     }
@@ -269,10 +276,12 @@ withDefaults(defineProps<Props>(), {
     }
   }
 }
-.m-spin-content {
+
+.eh-spin-content {
   transition: opacity .3s;
 }
-.m-spin-mask {
+
+.eh-spin-mask {
   user-select: none;
   pointer-events: none;
   opacity: .4;

@@ -79,14 +79,15 @@ function onCheckAll () { // 全选切换
 }
 </script>
 <template>
-  <div class="m-checkbox" :style="`max-width: ${maxWidth}; max-height: ${maxHeight};`">
+  <div class="eh-checkbox" :style="`max-width: ${maxWidth}; max-height: ${maxHeight};`">
     <template v-if="sum">
       <div
-        class="m-checkbox-wrap"
+        class="eh-checkbox-wrap"
         :class="{'vertical': vertical}"
         :style="sum !== index + 1 ? styleObject: ''"
         v-for="(option, index) in options" :key="index">
-        <div class="m-box" :class="{'disabled': disabled || option.disabled}" @click="(disabled || option.disabled) ? () => false : onClick(option.value)">
+        <div class="eh-box" :class="{'disabled': disabled || option.disabled}"
+             @click="(disabled || option.disabled) ? () => false : onClick(option.value)">
           <span class="u-checkbox" :class="{'u-checkbox-checked': checkedValue.includes(option.value) }"></span>
           <span class="u-label">
             <slot :label="option.label">{{ option.label }}</slot>
@@ -94,8 +95,8 @@ function onCheckAll () { // 全选切换
         </div>
       </div>
     </template>
-    <div v-else class="m-checkbox-wrap">
-      <div class="m-box" :class="{'disabled': disabled}" @click="onCheckAll">
+    <div v-else class="eh-checkbox-wrap">
+      <div class="eh-box" :class="{'disabled': disabled}" @click="onCheckAll">
         <span class="u-checkbox" :class="{'u-checkbox-checked': checked && !indeterminate, 'indeterminate': indeterminate }"></span>
         <span class="u-label">
           <slot>Check all</slot>
@@ -105,15 +106,17 @@ function onCheckAll () { // 全选切换
   </div>
 </template>
 <style lang="less" scoped>
-.m-checkbox {
+.eh-checkbox {
   display: inline-block;
   color: rgba(0, 0, 0, .88);
   font-size: 14px;
   line-height: 1;
   overflow: auto;
-  .m-checkbox-wrap {
+
+  .eh-checkbox-wrap {
     display: inline-block;
-    .m-box {
+
+    .eh-box {
       height: 100%;
       display: inline-flex; // 设置为flex布局后，所有的子元素都会变成行内块元素
       align-items: flex-start;

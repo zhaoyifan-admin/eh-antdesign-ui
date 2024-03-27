@@ -104,14 +104,14 @@ function getBrowserSize () {
 </script>
 <template>
   <div
-    :class="`m-col col-${responsiveProperty?.span || span} offset-${responsiveProperty?.offset || offset}`"
+    :class="`eh-col col-${responsiveProperty?.span || span} offset-${responsiveProperty?.offset || offset}`"
     style="padding-left: var(--xGap); padding-right: var(--xGap);"
     :style="`flex: ${flexValue}`">
     <slot></slot>
   </div>
 </template>
 <style lang="less" scoped>
-.m-col {
+.eh-col {
   position: relative;
   max-width: 100%;
   min-height: 1px;

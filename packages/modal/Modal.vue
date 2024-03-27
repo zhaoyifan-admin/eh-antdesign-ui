@@ -78,17 +78,18 @@ function onKnow () {
 }
 </script>
 <template>
-  <div class="m-modal-root">
+  <div class="eh-modal-root">
     <Transition name="mask">
-      <div v-show="visible" class="m-modal-mask"></div>
+      <div v-show="visible" class="eh-modal-mask"></div>
     </Transition>
     <Transition>
-      <div v-show="visible" class="m-modal-wrap" @click.self="onClose">
-        <div :class="['m-modal', center ? 'relative-hv-center' : 'top-center']" :style="`width: ${width}px; top: ${!center ? top + 'px':'50%'};`">
-          <div :class="['m-modal-body', {'loading':loading}]">
+      <div v-show="visible" class="eh-modal-wrap" @click.self="onClose">
+        <div :class="['eh-modal', center ? 'relative-hv-center' : 'top-center']"
+             :style="`width: ${width}px; top: ${!center ? top + 'px':'50%'};`">
+          <div :class="['eh-modal-body', {'loading':loading}]">
             <Spin class="u-spin" :spinning="loading" size="small" />
-            <div class="m-body">
-              <div class="m-title">
+            <div class="eh-body">
+              <div class="eh-title">
                 <template v-if="mode==='confirm'||mode==='erase'">
                   <svg focusable="false" class="u-icon confirm" data-icon="exclamation-circle" aria-hidden="true" viewBox="64 64 896 896"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M464 688a48 48 0 1096 0 48 48 0 10-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"></path></svg>
                 </template>
@@ -100,7 +101,7 @@ function onKnow () {
               </div>
               <div class="u-content">{{ desc?.content }}</div>
             </div>
-            <div class="m-btns">
+            <div class="eh-btns">
               <template v-if="mode==='confirm'|| mode==='erase'">
                 <Button class="mr8" @click="onCancel">{{ cancelText }}</Button>
                 <Button type="primary" @click="onConfirm" v-if="mode==='confirm'">{{ okText }}</Button>
@@ -143,7 +144,8 @@ function onKnow () {
 .top-center { // 相对定位，固定高度，始终距离视图顶端100px
   position: relative;
 }
-.m-modal-mask {
+
+.eh-modal-mask {
   position: fixed;
   top: 0;
   right: 0;
@@ -154,7 +156,8 @@ function onKnow () {
   z-index: 1000;
   background: rgba(0, 0, 0, .45);
 }
-.m-modal-wrap {
+
+.eh-modal-wrap {
   position: fixed;
   top: 0;
   inset-inline-end: 0;
@@ -164,13 +167,15 @@ function onKnow () {
   outline: 0;
   inset: 0;
   z-index: 1010;
-  .m-modal {
+
+  .eh-modal {
     width: 420px;
     margin: 0 auto;
     color: rgba(0, 0, 0, .88);
     font-size: 14px;
     line-height: 1.5714285714285714;
-    .m-modal-body {
+
+    .eh-modal-body {
       position: relative;
       word-break: break-all;
       padding: 20px 24px;
@@ -182,11 +187,13 @@ function onKnow () {
         inset: 0;
         margin: auto;
       }
-      .m-body {
+
+      .eh-body {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        .m-title {
+
+        .eh-title {
 
           width: 100%;
           .u-icon {
@@ -229,7 +236,8 @@ function onKnow () {
           max-width: calc(100% - 34px);
         }
       }
-      .m-btns {
+
+      .eh-btns {
         margin-top: 12px;
         text-align: right;
         .mr8 {

@@ -42,11 +42,11 @@ const showSuffix = computed(() => {
 })
 </script>
 <template>
-  <div class="m-statistic">
+  <div class="eh-statistic">
     <div class="u-title">
       <slot name="title">{{ title }}</slot>
     </div>
-    <div class="m-content" :style="valueStyle">
+    <div class="eh-content" :style="valueStyle">
       <span class="u-prefix" v-if="showPrefix">
         <slot name="prefix">{{ prefix }}</slot>
       </span>
@@ -60,7 +60,7 @@ const showSuffix = computed(() => {
   </div>
 </template>
 <style lang="less" scoped>
-.m-statistic {
+.eh-statistic {
   font-size: 14px;
   color: rgba(0, 0, 0, .88);
   line-height: 1.5714285714285714;
@@ -69,7 +69,8 @@ const showSuffix = computed(() => {
     color: rgba(0, 0, 0, .45);
     font-size: 14px;
   }
-  .m-content {
+
+  .eh-content {
     color: rgba(0, 0, 0, .88);
     font-size: 24px;
     .u-prefix {

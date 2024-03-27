@@ -120,7 +120,7 @@ function onThirdChange (value: string|number, label: string) { // 三级下拉�
 }
 </script>
 <template>
-  <div class="m-cascader" :style="`height: ${height}px; gap: ${gap}px;`">
+  <div class="eh-cascader" :style="`height: ${height}px; gap: ${gap}px;`">
     <Select
       :options="firstOptions"
       :label="label"
@@ -166,7 +166,7 @@ function onThirdChange (value: string|number, label: string) { // 三级下拉�
   </div>
 </template>
 <style lang="less" scoped>
-.m-cascader {
+.eh-cascader {
   display: inline-flex;
 }
 </style>

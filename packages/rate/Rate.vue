@@ -65,9 +65,9 @@ function preventDefault (e: Event) {
 }
 </script>
 <template>
-  <div class="m-rate" :class="{'disabled': disabled}" :style="`--color: ${color};`" @mouseleave="onLeave">
+  <div class="eh-rate" :class="{'disabled': disabled}" :style="`--color: ${color};`" @mouseleave="onLeave">
     <div
-      class="m-star"
+      class="eh-star"
       :style="`margin-right: ${n !== count ? gap:0}px;`"
       :class="{'u-star-half': allowHalf && activeValue >= n - 0.5 && activeValue < n, 'u-star-full': activeValue >= n, 'temp-gray': !allowHalf && tempValue === n}"
       @click="!allowHalf ? onClick(n):preventDefault($event)"
@@ -105,9 +105,10 @@ function preventDefault (e: Event) {
   </div>
 </template>
 <style lang="less" scoped>
-.m-rate {
+.eh-rate {
   display: inline-block;
-  .m-star {
+
+  .eh-star {
     position: relative;
     display: inline-block;
     cursor: pointer;

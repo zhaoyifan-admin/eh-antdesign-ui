@@ -274,22 +274,23 @@ function onSwitch (n: number) { // 分页切换图片
 </script>
 <template>
   <div
-    class="m-slider"
+    class="eh-slider"
     ref="carousel"
     :style="`--navColor: ${navColor}; --pageActiveColor: ${pageActiveColor}; width: ${carouselWidth}; height: ${carouselHeight};`"
     @mouseenter="pauseOnMouseEnter ? onStop() : () => false"
     @mouseleave="pauseOnMouseEnter ? onStart() : () => false">
     <div :class="{'transition': transition}" :style="`width: ${totalWidth}px; height: 100%; will-change: transform; transform: translateX(${-left}px);`">
-      <div class="m-image" v-for="(image, index) in images" :key="index">
+      <div class="eh-image" v-for="(image, index) in images" :key="index">
         <Spin :spinning="!complete[index]" indicator="dynamic-circle">
-          <a :href="image.link ? image.link:'javascript:;'" :target="image.link ? '_blank':'_self'" class="m-link">
+          <a :href="image.link ? image.link:'javascript:;'" :target="image.link ? '_blank':'_self'" class="eh-link">
             <img @load="onComplete(index)" :src="image.src" :key="image.src" :alt="image.title" class="u-img" :style="`width: ${imageWidth}px; height: ${imageHeight}px;`"/>
           </a>
         </Spin>
       </div>
-      <div class="m-image" v-if="imageCount">
+      <div class="eh-image" v-if="imageCount">
         <Spin :spinning="!complete[0]" indicator="dynamic-circle">
-          <a :href="images[0].link ? images[0].link:'javascript:;'" :target="images[0].link ? '_blank':'_self'" class="m-link">
+          <a :href="images[0].link ? images[0].link:'javascript:;'" :target="images[0].link ? '_blank':'_self'"
+             class="eh-link">
             <img @load="onComplete(0)" :src="images[0].src" :key="images[0].src" :alt="images[0].title" class="u-img"  :style="`width: ${imageWidth}px; height: ${imageHeight}px;`"/>
           </a>
         </Spin>
@@ -299,7 +300,7 @@ function onSwitch (n: number) { // 分页切换图片
       <svg class="arrow-left" :style="`width: ${navSize}px; height: ${navSize}px;`" @click="onLeftArrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.26 3.2a.75.75 0 0 1 .04 1.06L6.773 8l3.527 3.74a.75.75 0 1 1-1.1 1.02l-4-4.25a.75.75 0 0 1 0-1.02l4-4.25a.75.75 0 0 1 1.06-.04z"></path></svg>
       <svg class="arrow-right" :style="`width: ${navSize}px; height: ${navSize}px;`" @click="onRightArrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5.74 3.2a.75.75 0 0 0-.04 1.06L9.227 8L5.7 11.74a.75.75 0 1 0 1.1 1.02l4-4.25a.75.75 0 0 0 0-1.02l-4-4.25a.75.75 0 0 0-1.06-.04z"></path></svg>
     </template>
-    <div class="m-switch" v-if="pagination">
+    <div class="eh-switch" v-if="pagination">
       <div
         @click="onSwitch(n)"
         :class="['u-circle', {'active': activeSwitcher === n }]"
@@ -310,7 +311,7 @@ function onSwitch (n: number) { // 分页切换图片
   </div>
 </template>
 <style lang="less" scoped>
-.m-slider {
+.eh-slider {
   display: inline-block;
   margin: 0 auto;
   position: relative;
@@ -318,9 +319,11 @@ function onSwitch (n: number) { // 分页切换图片
   .transition {
     transition: transform .3s ease-out;
   }
-  .m-image {
+
+  .eh-image {
     display: inline-block;
-    .m-link {
+
+    .eh-link {
       position: relative;
       display: block;
       height: 100%;
@@ -369,7 +372,8 @@ function onSwitch (n: number) { // 分页切换图片
       opacity: 1;
     }
   }
-  .m-switch {
+
+  .eh-switch {
     position: absolute;
     bottom: 12px;
     left: 50%;

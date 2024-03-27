@@ -35,7 +35,7 @@ const showText = computed(() => {
 <template>
   <div
     v-if="type==='horizontal'"
-    :class="[`m-divider-horizontal ${orientation}`,
+    :class="[`eh-divider-horizontal ${orientation}`,
       {
         dashed: dashed,
         margin24: !showText,
@@ -54,10 +54,10 @@ const showText = computed(() => {
       <slot></slot>
     </span>
   </div>
-  <div v-else class="m-divider-vertical"></div>
+  <div v-else class="eh-divider-vertical"></div>
 </template>
 <style lang="less" scoped>
-.m-divider-horizontal {
+.eh-divider-horizontal {
   display: flex;
   align-items: center;
   margin: 16px 0;
@@ -83,7 +83,8 @@ const showText = computed(() => {
     padding: 0 16px;
   }
 }
-.m-divider-vertical {
+
+.eh-divider-vertical {
   position: relative;
   top: -.06em;
   display: inline-block;

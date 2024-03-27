@@ -197,7 +197,7 @@ function onRightSlide (source: number, place: string) {
 }
 </script>
 <template>
-  <div :class="['m-slider', { disabled: disabled }]" ref="slider" :style="`width: ${totalWidth};`">
+  <div :class="['eh-slider', { disabled: disabled }]" ref="slider" :style="`width: ${totalWidth};`">
     <div class="u-slider-rail" @click.self="disabled ? () => false : onClickPoint($event)"></div>
     <div class="u-slider-track" :class="{trackTransition: transition}" :style="`left: ${left}px; right: auto; width: ${right - left}px;`"></div>
     <div
@@ -212,9 +212,9 @@ function onRightSlide (source: number, place: string) {
       @keydown.down.prevent="disabled ? () => false : onLeftSlide(left, 'left')"
       @keydown.up.prevent="disabled ? () => false : onRightSlide(left, 'left')"
       @mousedown="disabled ? () => false : onLeftMouseDown()">
-      <div v-if="!hideTip" class="m-handle-tooltip">
+      <div v-if="!hideTip" class="eh-handle-tooltip">
         {{ leftValue }}
-        <div class="m-arrow"></div>
+        <div class="eh-arrow"></div>
       </div>
     </div>
     <div
@@ -228,14 +228,14 @@ function onRightSlide (source: number, place: string) {
       @keydown.down.prevent="disabled ? () => false : onLeftSlide(right, 'right')"
       @keydown.up.prevent="disabled ? () => false : onRightSlide(right, 'right')"
       @mousedown="disabled ? () => false : onRightMouseDown()">
-      <div v-if="!hideTip" class="m-handle-tooltip">
+      <div v-if="!hideTip" class="eh-handle-tooltip">
         {{ rightValue }}
-        <div class="m-arrow"></div>
+        <div class="eh-arrow"></div>
       </div></div>
   </div>
 </template>
 <style lang="less" scoped>
-.m-slider {
+.eh-slider {
   display: inline-block;
   height: 4px;
   position: relative;
@@ -283,7 +283,8 @@ function onRightSlide (source: number, place: string) {
     border-radius: 50%;
     cursor: pointer;
     transition: width .3s, height .3s, border-color .3s, border-width .3s, transform .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-    .m-handle-tooltip {
+
+    .eh-handle-tooltip {
       position: relative;
       display: inline-block;
       padding: 6px 8px;
@@ -302,7 +303,8 @@ function onRightSlide (source: number, place: string) {
       user-select: none;
       opacity: 0;
       transition: transform .25s, opacity .25s;
-      .m-arrow {
+
+      .eh-arrow {
         position: absolute;
         z-index: 9;
         left: 50%;
@@ -348,7 +350,8 @@ function onRightSlide (source: number, place: string) {
     }
     &:hover {
       .hover-focus-handle();
-      .m-handle-tooltip {
+
+      .eh-handle-tooltip {
         pointer-events: auto;
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);

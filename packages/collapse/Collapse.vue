@@ -92,9 +92,9 @@ function onCopy (index: number) {
 }
 </script>
 <template>
-  <div class="m-collapse">
+  <div class="eh-collapse">
     <div
-      class="m-collapse-item"
+      class="eh-collapse-item"
       :class="{'u-collapse-item-active': activeJudge(data.key || index)}"
       v-for="(data, index) in collapseData" :key="index">
       <div class="u-collapse-header" @click="onClick(data.key || index)">
@@ -116,12 +116,13 @@ function onCopy (index: number) {
   </div>
 </template>
 <style lang="less" scoped>
-.m-collapse {
+.eh-collapse {
   background-color: rgba(0, 0, 0, .02);
   border: 1px solid #d9d9d9;
   border-bottom: 0;
   border-radius: 8px;
-  .m-collapse-item {
+
+  .eh-collapse-item {
     border-bottom: 1px solid #d9d9d9;
     &:last-child {
       border-radius: 0 0 8px 8px;

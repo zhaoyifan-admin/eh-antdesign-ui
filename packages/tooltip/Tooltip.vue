@@ -48,10 +48,10 @@ function onHide (): void {
 }
 </script>
 <template>
-  <div class="m-tooltip" @mouseenter="onShow" @mouseleave="onHide">
+  <div class="eh-tooltip" @mouseenter="onShow" @mouseleave="onHide">
     <div
       ref="tooltipRef"
-      class="m-tooltip-content"
+      class="eh-tooltip-content"
       :class="{'show-tip': visible}"
       :style="`--tooltip-font-size: ${fontSize}px; --tooltip-color: ${color}; --tooltip-background-color: ${backgroundColor}; max-width: ${maxWidth}px; top: ${-top}px; left: ${-left}px;`"
       @mouseenter="onShow"
@@ -61,7 +61,7 @@ function onHide (): void {
         :style="overlayStyle">
         <slot name="tooltip">{{ tooltip }}</slot>
       </div>
-      <div class="m-tooltip-arrow">
+      <div class="eh-tooltip-arrow">
         <span class="u-tooltip-arrow"></span>
       </div>
     </div>
@@ -71,10 +71,11 @@ function onHide (): void {
   </div>
 </template>
 <style lang="less" scoped>
-.m-tooltip {
+.eh-tooltip {
   position: relative;
   display: inline-block;
-  .m-tooltip-content {
+
+  .eh-tooltip-content {
     position: absolute;
     z-index: 999;
     width: max-content;
@@ -98,7 +99,8 @@ function onHide (): void {
       border-radius: 6px;
       box-shadow: 0 6px 16px 0 rgba(0, 0, 0, .08), 0 3px 6px -4px rgba(0, 0, 0, .12), 0 9px 28px 8px rgba(0, 0, 0, .05);
     }
-    .m-tooltip-arrow {
+
+    .eh-tooltip-arrow {
       position: absolute;
       z-index: 9;
       left: 50%;

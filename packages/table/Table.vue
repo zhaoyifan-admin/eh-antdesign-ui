@@ -36,26 +36,27 @@ function changePage (pager: {page: number, pageSize: number}) { // 分页回调
 }
 </script>
 <template>
-  <div class="m-table-wrap">
-    <table class="m-table">
+  <div class="eh-table-wrap">
+    <table class="eh-table">
       <thead>
-        <tr class="m-tr">
-          <th class="m-th" :style="`width: ${typeof item.width === 'number' ? item.width + 'px' : item.width};`" v-for="(item, index) in columns" :key="index">
+      <tr class="eh-tr">
+        <th class="eh-th" :style="`width: ${typeof item.width === 'number' ? item.width + 'px' : item.width};`"
+            v-for="(item, index) in columns" :key="index">
             {{ item.title }}
           </th>
         </tr>
       </thead>
-      <tbody class="m-body">
-        <tr class="m-tr-loading" v-show="loading">
-          <Spin class="m-loading" size="small" :colspan="columns.length" />
+      <tbody class="eh-body">
+      <tr class="eh-tr-loading" v-show="loading">
+        <Spin class="eh-loading" size="small" :colspan="columns.length" />
         </tr>
-        <tr class="m-tr-empty" v-show="!total">
-          <td class="m-td-empty" :colspan="columns.length">
+      <tr class="eh-tr-empty" v-show="!total">
+        <td class="eh-td-empty" :colspan="columns.length">
             <Empty class="empty" image="2" />
           </td>
         </tr>
-        <tr class="m-tr" v-for="(data, index) in dataSource" :key="index">
-          <td class="m-td" v-for="(col, n) in columns" :key="n" :title="data[col.dataIndex as any]">
+      <tr class="eh-tr" v-for="(data, index) in dataSource" :key="index">
+        <td class="eh-td" v-for="(col, n) in columns" :key="n" :title="data[col.dataIndex as any]">
             <slot v-if="col.slot" v-bind="data" :name="col.slot" :index="index">{{ data[col.dataIndex as any] || '--' }}</slot>
             <span v-else>{{ data[col.dataIndex as any] || '--' }}</span>
           </td>
@@ -76,12 +77,13 @@ function changePage (pager: {page: number, pageSize: number}) { // 分页回调
   </div>
 </template>
 <style lang="less" scoped>
-.m-table-wrap {
+.eh-table-wrap {
   color: rgba(0, 0, 0, .65);
   font-size: 14px;
   line-height: 1.5714285714285714;
   border-radius: 8px 8px 0 0;
-  .m-table {
+
+  .eh-table {
     display: table;
     table-layout: fixed;
     width: 100%;
@@ -90,7 +92,8 @@ function changePage (pager: {page: number, pageSize: number}) { // 分页回调
     border-collapse: separate;
     border-spacing: 0;
     margin: 0;
-    .m-th {
+
+    .eh-th {
       padding: 16px;
       color: rgba(0, 0, 0, .85);
       font-weight: 500;
@@ -106,24 +109,29 @@ function changePage (pager: {page: number, pageSize: number}) { // 分页回调
         border-top-right-radius: 8px;
       }
     }
-    .m-body {
+
+    .eh-body {
       position: relative;
-      .m-tr-loading {
+
+      .eh-tr-loading {
         border: none;
         background-color: #FFF;
-        .m-loading {
+
+        .eh-loading {
           position: absolute;
           width: 100%;
           height: 100%;
         }
       }
-      .m-tr-empty {
+
+      .eh-tr-empty {
         border: none;
         background-color: #FFF;
         &:hover {
           background: #FFF;
         }
-        .m-td-empty {
+
+        .eh-td-empty {
           padding: 16px;
           border: none;
           border-bottom: 1px solid #f0f0f0;;
@@ -133,11 +141,13 @@ function changePage (pager: {page: number, pageSize: number}) { // 分页回调
         }
       }
     }
-    .m-tr {
+
+    .eh-tr {
       border: none;
       background-color: #FFF;
       transition: background-color .3s;
-      .m-td {
+
+      .eh-td {
         padding: 16px;
         border: none;
         border-bottom: 1px solid #f0f0f0;;

@@ -115,10 +115,11 @@ function onLoaded (index: number) {
 }
 </script>
 <template>
-  <div class="m-waterfall" ref="waterfall" :style="`--borderRadius: ${borderRadius}px; background-color: ${backgroundColor}; width: ${totalWidth}; height: ${height}px;`">
+  <div class="eh-waterfall" ref="waterfall"
+       :style="`--borderRadius: ${borderRadius}px; background-color: ${backgroundColor}; width: ${totalWidth}; height: ${height}px;`">
     <Spin
       v-show="loaded[index]!==undefined"
-      class="m-image"
+      class="eh-image"
       :style="`width: ${property.width}px; height: ${property.height}px; top: ${property && property.top}px; left: ${property && property.left}px;`"
       :spinning="!loaded[index]"
       size="small"
@@ -133,10 +134,11 @@ function onLoaded (index: number) {
   </div>
 </template>
 <style lang="less" scoped>
-.m-waterfall {
+.eh-waterfall {
   position: relative;
   border-radius: var(--borderRadius);
-  .m-image {
+
+  .eh-image {
     position: absolute;
     .u-image {
       width: 100%;

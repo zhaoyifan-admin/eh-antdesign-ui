@@ -127,14 +127,14 @@ function getBrowserSize () {
 </script>
 <template>
   <div
-    class="m-row"
+    class="eh-row"
     :class="{'gutter-row': gutter}"
     :style="`--xGap: ${(xGap as number) / 2}px; --justify: ${justify}; --align: ${alignProperties[align]}; width: ${rowWidth}; margin-left: -${(xGap as number) / 2}px; margin-right: -${(xGap as number) / 2}px; row-gap: ${yGap}px;`">
     <slot></slot>
   </div>
 </template>
 <style lang="less" scoped>
-.m-row {
+.eh-row {
   display: flex;
   flex-flow: row wrap;
   justify-content: var(--justify);

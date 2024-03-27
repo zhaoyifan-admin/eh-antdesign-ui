@@ -109,7 +109,7 @@ function onClear () {
 </script>
 <template>
   <div
-    class="m-textarea"
+    class="eh-textarea"
     :class="{'show-count': showCount}"
     :style="`width: ${areaWidth};`"
     :data-count="showCountNum">
@@ -126,13 +126,13 @@ function onClear () {
       @change="onChange"
       @keydown="onKeyboard"
       v-bind="$attrs" />
-    <span class="m-clear" v-if="!disabled&&allowClear&&value" @click="onClear">
+    <span class="eh-clear" v-if="!disabled&&allowClear&&value" @click="onClear">
       <svg focusable="false" class="u-clear" data-icon="close-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true" viewBox="64 64 896 896"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"></path></svg>
     </span>
   </div>
 </template>
 <style lang="less" scoped>
-.m-textarea {
+.eh-textarea {
   position: relative;
   display: inline-block;
   .u-textarea {
@@ -183,7 +183,8 @@ function onClear () {
   textarea:-ms-input-placeholder {
     color: rgba(0, 0, 0, .25);
   }
-  .m-clear {
+
+  .eh-clear {
     position: absolute;
     inset-block-start: 8px;
     inset-inline-end: 8px;

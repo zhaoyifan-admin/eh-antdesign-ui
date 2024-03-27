@@ -86,7 +86,7 @@ function onSwiper (swiper: any) {
     @slideChange="$emit('change')"
     v-bind="$attrs">
     <swiper-slide v-for="(image, index) in images" :key="index">
-      <a :href="image.link ? image.link:'javascript:;'" :target="image.link ? '_blank':'_self'" class="m-link">
+      <a :href="image.link ? image.link:'javascript:;'" :target="image.link ? '_blank':'_self'" class="eh-link">
         <img
           :src="image.src"
           class="u-img"
@@ -108,7 +108,7 @@ function onSwiper (swiper: any) {
     @slideChange="$emit('change')"
     v-bind="$attrs">
     <swiper-slide v-for="(image, index) in images" :key="index">
-      <a :href="image.link ? image.link:'javascript:;'" :target="image.link ? '_blank':'_self'" class="m-link">
+      <a :href="image.link ? image.link:'javascript:;'" :target="image.link ? '_blank':'_self'" class="eh-link">
         <img
           :src="image.src"
           class="u-img"
@@ -128,7 +128,7 @@ function onSwiper (swiper: any) {
     @slideChange="$emit('change')"
     v-bind="$attrs">
     <swiper-slide v-for="(image, index) in images" :key="index">
-      <a :href="image.link ? image.link:'javascript:;'" :target="image.link ? '_blank':'_self'" class="m-link">
+      <a :href="image.link ? image.link:'javascript:;'" :target="image.link ? '_blank':'_self'" class="eh-link">
         <img
           :src="image.src"
           class="u-img"
@@ -141,7 +141,7 @@ function onSwiper (swiper: any) {
   </swiper>
 </template>
 <style lang="less" scoped>
-.m-link {
+.eh-link {
   display: block;
   height: 100%;
 }

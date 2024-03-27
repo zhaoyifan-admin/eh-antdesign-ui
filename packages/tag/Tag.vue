@@ -143,36 +143,36 @@ function onKeyboard (e: KeyboardEvent) {
 <template>
   <div
     v-if="!dynamic"
-    class="m-tag"
+    class="eh-tag"
     :class="[`tag-${size}`, color && presetColor.includes(color) ? 'tag-' + color:'', {'tag-borderless': !bordered, 'has-color': color && !presetColor.includes(color), hidden: hidden}]"
     :style="`background-color: ${color && !presetColor.includes(color) ? color : ''};`">
-    <span class="m-icon" v-if="showIcon">
+    <span class="eh-icon" v-if="showIcon">
       <slot name="icon">{{ icon }}</slot>
     </span>
     <span class="u-tag">
       <slot></slot>
     </span>
-    <span class="m-close" v-if="closable" @click="onClose">
+    <span class="eh-close" v-if="closable" @click="onClose">
       <svg focusable="false" class="u-close" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true" viewBox="64 64 896 896"><path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path></svg>
     </span>
   </div>
   <Space v-else :width="spaceWidth" :align="spaceAlign" :direction="spaceDirection" :size="spaceSize">
     <div
-      class="m-tag"
+      class="eh-tag"
       :class="[`tag-${tag.size || size}`, (tag.color || color) && presetColor.includes((tag.color || color)) ? 'tag-' + (tag.color || color):'', {'tag-borderless': tag.bordered !== undefined && !tag.bordered, 'has-color': (tag.color || color) && !presetColor.includes((tag.color || color))}]"
       :style="`background-color: ${(tag.color || color) && !presetColor.includes((tag.color || color)) ? (tag.color || color) : ''};`"
       v-for="(tag, index) in tags" :key="index">
-      <span class="m-icon" ref="tagsIconRef" v-show="showTagsIcon[index]">
+      <span class="eh-icon" ref="tagsIconRef" v-show="showTagsIcon[index]">
         <slot name="icon" :index="index">{{ tag.icon }}</slot>
       </span>
       <span class="u-tag">
         <slot :label="tag.label" :index="index">{{ tag.label }}</slot>
       </span>
-      <span class="m-close" v-if="tag.closable || closable" @click="onCloseTags(tag, index)">
+      <span class="eh-close" v-if="tag.closable || closable" @click="onCloseTags(tag, index)">
         <svg focusable="false" class="u-close" data-icon="close" width="1em" height="1em" fill="currentColor" aria-hidden="true" viewBox="64 64 896 896"><path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path></svg>
       </span>
     </div>
-    <div v-if="!showInput" class="m-tag" :class="[`tag-${size}`, {'m-plus': dynamic}]" @click="onAdd">
+    <div v-if="!showInput" class="eh-tag" :class="[`tag-${size}`, {'eh-plus': dynamic}]" @click="onAdd">
       <svg focusable="false" class="u-plus" data-icon="plus" width="1em" height="1em" fill="currentColor" aria-hidden="true" viewBox="64 64 896 896"><path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"></path><path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"></path></svg>
     </div>
     <input
@@ -188,7 +188,7 @@ function onKeyboard (e: KeyboardEvent) {
   </Space>
 </template>
 <style lang="less" scoped>
-.m-tag {
+.eh-tag {
   height: 24px;
   font-size: 14px;
   line-height: 22px;
@@ -201,7 +201,8 @@ function onKeyboard (e: KeyboardEvent) {
   border-radius: 6px;
   transition: all .2s;
   text-align: start;
-  .m-icon {
+
+  .eh-icon {
     margin-right: 5px;
     height: 100%;
     display: inline-flex;
@@ -225,7 +226,8 @@ function onKeyboard (e: KeyboardEvent) {
     vertical-align: -0.175em;
     transition: fill .2s;
   }
-  .m-close {
+
+  .eh-close {
     margin-inline-start: 3px;
     font-size: 12px;
     display: inline-flex;
@@ -256,19 +258,22 @@ function onKeyboard (e: KeyboardEvent) {
     width: 12px;
     height: 12px;
   }
-  .m-close {
+
+  .eh-close {
     font-size: 10px;
   }
 }
 .tag-large {
   height: 28px;
   line-height: 26px;
-  .m-close {
+
+  .eh-close {
     font-size: 14px;
     vertical-align: -0.16em;
   }
 }
-.m-plus {
+
+.eh-plus {
   background: rgb(255, 255, 255);
   border-style: dashed;
   padding-inline: 10px;
@@ -458,7 +463,8 @@ function onKeyboard (e: KeyboardEvent) {
 .has-color {
   color: #fff;
   border-color: transparent;
-  .m-close .u-close {
+
+  .eh-close .u-close {
     fill: rgba(255, 255, 255, .85);
     &:hover {
       fill: rgba(255, 255, 255, 1);

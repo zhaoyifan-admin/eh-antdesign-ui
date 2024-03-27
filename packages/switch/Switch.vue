@@ -21,8 +21,9 @@ function onSwitch () {
 }
 </script>
 <template>
-  <div class="m-switch-wrap">
-    <div @click="disabled ? () => false : onSwitch()" :class="['m-switch', { 'switch-checked': checked, 'disabled': disabled }]">
+  <div class="eh-switch-wrap">
+    <div @click="disabled ? () => false : onSwitch()"
+         :class="['eh-switch', { 'switch-checked': checked, 'disabled': disabled }]">
       <div :class="['u-switch-inner', checked ? 'inner-checked' : 'inner-unchecked' ]">{{ checked ? onInfo : offInfo }}</div>
       <div :class="['u-node', { 'node-checked': checked }]" :style="nodeStyle">
         <slot name="node"></slot>
@@ -31,11 +32,12 @@ function onSwitch () {
   </div>
 </template>
 <style lang="less" scoped>
-.m-switch-wrap {
+.eh-switch-wrap {
   display: inline-block;
   height: 22px;
   min-width: 44px;
-  .m-switch {
+
+  .eh-switch {
     position: relative;
     display: inline-flex;
     align-items: center;

@@ -111,7 +111,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="m-video" :class="{'u-video-hover': !hidden}" :style="`width: ${width}px; height: ${height}px;`">
+  <div class="eh-video" :class="{'u-video-hover': !hidden}" :style="`width: ${width}px; height: ${height}px;`">
     <video
       ref="veo"
       :style="`object-fit: ${fit};`"
@@ -132,7 +132,7 @@ onMounted(() => {
       v-bind="$attrs">
       您的浏览器不支持video标签。
     </video>
-    <span v-show="originPlay || showPlay" class="m-icon-play" :class="{'hidden': hidden}">
+    <span v-show="originPlay || showPlay" class="eh-icon-play" :class="{'hidden': hidden}">
       <svg class="u-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
       <path d="M28.26,11.961L11.035,0.813C7.464-1.498,3,1.391,3,6.013v21.974c0,4.622,4.464,7.511,8.035,5.2L28.26,22.039
           C31.913,19.675,31.913,14.325,28.26,11.961z"></path>
@@ -141,12 +141,13 @@ onMounted(() => {
   </div>
 </template>
 <style lang="less" scoped>
-.m-video {
+.eh-video {
   display: inline-block;
   position: relative;
   background: #000;
   cursor: pointer;
-  .m-icon-play {
+
+  .eh-icon-play {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -175,7 +176,7 @@ onMounted(() => {
 }
 .u-video-hover {
   &:hover {
-    .m-icon-play {
+    .eh-icon-play {
       background-color: rgba(0, 0, 0, .7);
     }
   }

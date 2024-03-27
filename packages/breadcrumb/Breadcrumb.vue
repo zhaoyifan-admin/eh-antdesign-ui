@@ -43,8 +43,8 @@ function getUrl (route: Route) {
 }
 </script>
 <template>
-  <div class="m-breadcrumb" :style="`height: ${height}px;`">
-    <div class="m-bread" v-for="(route, index) in routes" :key="index">
+  <div class="eh-breadcrumb" :style="`height: ${height}px;`">
+    <div class="eh-bread" v-for="(route, index) in routes" :key="index">
       <a
         :class="['u-route',{ active: index===len-1 }]"
         :style="`font-size: ${fontSize}px; max-width: ${maxWidth}px;`"
@@ -62,10 +62,11 @@ function getUrl (route: Route) {
   </div>
 </template>
 <style lang="less" scoped>
-.m-breadcrumb {
+.eh-breadcrumb {
   display: flex;
   align-items: center;
-  .m-bread {
+
+  .eh-bread {
     display: inline-flex;
     align-items: center;
     line-height: 1.5714285714285714;

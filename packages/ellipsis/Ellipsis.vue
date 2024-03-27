@@ -82,7 +82,7 @@ function onExpand () {
     </template>
     <div
       ref="ellipsis"
-      class="m-ellipsis"
+      class="eh-ellipsis"
       :class="[line ? 'ellipsis-line' : 'not-ellipsis-line', {'cursor-pointer': expand}]"
       :style="`-webkit-line-clamp: ${line}; max-width: ${textMaxWidth};`"
       @click="expand ? onExpand() : () => false"
@@ -93,7 +93,7 @@ function onExpand () {
   <div
     v-else
     ref="ellipsis"
-    class="m-ellipsis"
+    class="eh-ellipsis"
     :class="[line ? 'ellipsis-line' : 'not-ellipsis-line', {'cursor-pointer': expand}]"
     :style="`-webkit-line-clamp: ${line}; max-width: ${textMaxWidth};`"
     @click="expand ? onExpand() : () => false"
@@ -102,7 +102,7 @@ function onExpand () {
   </div>
 </template>
 <style lang="less" scoped>
-.m-ellipsis {
+.eh-ellipsis {
   overflow: hidden;
   cursor: text;
 }

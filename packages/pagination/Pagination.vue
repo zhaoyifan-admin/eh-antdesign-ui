@@ -116,8 +116,8 @@ function changePage (pageNum: number): boolean | void {
 }
 </script>
 <template>
-  <div :class="[`m-pagination ${placement}`, { hidden: hideOnSinglePage && total<=pageSize }]">
-    <div class="m-pagination-wrap">
+  <div :class="[`eh-pagination ${placement}`, { hidden: hideOnSinglePage && total<=pageSize }]">
+    <div class="eh-pagination-wrap">
       <span class="mr8" v-if="showTotal">共 {{ totalPage }} 页 / {{ total }} 条</span>
       <span class="u-item" :class="{ disabled: currentPage === 1 }" @click="changePage(currentPage - 1)">
         <svg class="u-arrow" viewBox="64 64 896 896" data-icon="left" aria-hidden="true" focusable="false">
@@ -128,7 +128,7 @@ function changePage (pageNum: number): boolean | void {
       </span>
       <span :class="['u-item', { active: currentPage === 1 }]" @click="changePage(1)">1</span>
       <span
-        class="m-arrow"
+        class="eh-arrow"
         ref="forward"
         v-show="forwardMore && pageList[0] - 1 > 1"
         @click="onForward"
@@ -139,7 +139,7 @@ function changePage (pageNum: number): boolean | void {
       </span>
       <span :class="['u-item', { active: currentPage === page }]" v-for="(page, index) in pageList" :key="index" @click="changePage(page)">{{ page }}</span>
       <span
-        class="m-arrow"
+        class="eh-arrow"
         ref="backward"
         v-show="backwardMore && pageList[pageList.length - 1]+1 < totalPage"
         @click="onBackward"
@@ -173,9 +173,11 @@ function changePage (pageNum: number): boolean | void {
 .right {
   text-align: right;
 }
-.m-pagination {
+
+.eh-pagination {
   margin: 16px 0;
-  .m-pagination-wrap {
+
+  .eh-pagination-wrap {
     display: inline-block;
     height: 32px;
     line-height: 30px;
@@ -235,7 +237,8 @@ function changePage (pageNum: number): boolean | void {
         fill: rgba(0, 0, 0, .25);
       }
     }
-    .m-arrow {
+
+    .eh-arrow {
       position: relative;
       display: inline-block;
       vertical-align: top;

@@ -117,8 +117,8 @@ function onDown () {
 }
 </script>
 <template>
-  <div class="m-input-number" tabindex="1" :style="`width: ${inputWidth};`">
-    <div class="m-input-wrap">
+  <div class="eh-input-number" tabindex="1" :style="`width: ${inputWidth};`">
+    <div class="eh-input-wrap">
       <span class="u-input-prefix" v-if="showPrefix">
         <slot name="prefix">{{ prefix }}</slot>
       </span>
@@ -139,7 +139,7 @@ function onDown () {
         v-model="numValue"
         v-bind="$attrs" />
     </div>
-    <div class="m-handler-wrap">
+    <div class="eh-handler-wrap">
       <span class="u-up-arrow" :class="{disabled: (value || 0) >= max}" @click="onUp">
         <svg focusable="false" class="u-icon" data-icon="up" aria-hidden="true" viewBox="64 64 896 896"><path d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"></path></svg>
       </span>
@@ -150,7 +150,7 @@ function onDown () {
   </div>
 </template>
 <style lang="less" scoped>
-.m-input-number {
+.eh-input-number {
   position: relative;
   display: inline-block;
   height: 30px;
@@ -164,7 +164,8 @@ function onDown () {
   transition: all .2s;
   &:hover {
     border-color: @themeColor;
-    .m-handler-wrap {
+
+    .eh-handler-wrap {
       background: #FFF;
       opacity: 1;
     }
@@ -173,7 +174,8 @@ function onDown () {
     border-color: @themeColor;
     box-shadow: 0 0 0 2px fade(@themeColor, 20%);
   }
-  .m-input-wrap {
+
+  .eh-input-wrap {
     width: 100%;
     display: inline-flex;
     vertical-align: top;
@@ -208,7 +210,8 @@ function onDown () {
       color: rgba(0, 0, 0, .25)
     }
   }
-  .m-handler-wrap {
+
+  .eh-handler-wrap {
     position: absolute;
     top: 0;
     right: 0;

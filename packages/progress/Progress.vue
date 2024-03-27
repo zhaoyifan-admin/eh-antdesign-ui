@@ -53,13 +53,14 @@ const showPercent = computed(() => {
 })
 </script>
 <template>
-  <div v-if="type==='line'" class="m-progress-line" :style="`width: ${totalWidth}; height: ${strokeWidth < 24 ? 24 : strokeWidth}px;`">
-    <div class="m-progress-inner">
+  <div v-if="type==='line'" class="eh-progress-line"
+       :style="`width: ${totalWidth}; height: ${strokeWidth < 24 ? 24 : strokeWidth}px;`">
+    <div class="eh-progress-inner">
       <div :class="['u-progress-bg', {'u-success-bg': percent >= 100}]" :style="`background: ${lineColor}; width: ${percent >= 100 ? 100 : percent}%; height: ${strokeWidth}px;`"></div>
     </div>
     <template v-if="showInfo">
       <Transition mode="out-in">
-        <span v-if="percent >= 100" class="m-success">
+        <span v-if="percent >= 100" class="eh-success">
           <svg focusable="false" class="u-icon" data-icon="check-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true" viewBox="64 64 896 896"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"></path></svg>
         </span>
         <p class="u-progress-text" v-else>
@@ -68,7 +69,7 @@ const showPercent = computed(() => {
       </Transition>
     </template>
   </div>
-  <div v-else class="m-progress-circle" :style="`width: ${totalWidth}; height: ${totalWidth};`">
+  <div v-else class="eh-progress-circle" :style="`width: ${totalWidth}; height: ${totalWidth};`">
     <svg class="u-progress-circle" viewBox="0 0 100 100">
       <path :d="path" stroke-linecap="round" class="u-progress-circle-trail" :stroke-width="strokeWidth" :style="`stroke-dasharray: ${perimeter}px, ${perimeter}px;`" fill-opacity="0"></path>
       <path :d="path" stroke-linecap="round" class="u-progress-circle-path" :class="{success: percent >= 100}" :stroke-width="strokeWidth" :stroke="lineColor" :style="`stroke-dasharray: ${(percent / 100) * perimeter}px, ${perimeter}px;`" :opacity="percent === 0 ? 0 : 1" fill-opacity="0"></path>
@@ -93,10 +94,11 @@ const showPercent = computed(() => {
   opacity: 0;
 }
 @success: #52C41A;
-.m-progress-line {
+.eh-progress-line {
   display: flex;
   align-items: center;
-  .m-progress-inner {
+
+  .eh-progress-inner {
     width: 100%;
     background: #f5f5f5;
     border-radius: 100px;
@@ -133,7 +135,8 @@ const showPercent = computed(() => {
       background: @success !important;
     }
   }
-  .m-success {
+
+  .eh-success {
     width: 40px;
     text-align: center;
     display: inline-flex;
@@ -159,7 +162,8 @@ const showPercent = computed(() => {
     color: rgba(0, 0, 0, .88);
   }
 }
-.m-progress-circle {
+
+.eh-progress-circle {
   display: inline-block;
   position: relative;
   .u-progress-circle {

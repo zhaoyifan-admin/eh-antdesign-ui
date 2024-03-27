@@ -59,7 +59,7 @@ const year = computed(() => {
 // }
 </script>
 <template>
-  <div class="m-datepicker" :style="`width: ${width}px;`">
+  <div class="eh-datepicker" :style="`width: ${width}px;`">
     <VueDatePicker
       locale="zh-CN"
       :month-change-on-scroll="false"
@@ -79,7 +79,7 @@ const year = computed(() => {
   </div>
 </template>
 <style lang="less" scoped>
-.m-datepicker {
+.eh-datepicker {
   display: inline-block;
 }
 .dp__theme_dark { // dark theme

@@ -46,14 +46,15 @@ function onClick (value: any) {
 }
 </script>
 <template>
-  <div class="m-radio" :class="{'m-radio-button-solid': buttonStyle === 'solid'}">
+  <div class="eh-radio" :class="{'eh-radio-button-solid': buttonStyle === 'solid'}">
     <template v-if="!button">
       <div
-        class="m-radio-wrap"
+        class="eh-radio-wrap"
         :class="{'vertical': vertical}"
         :style="sum !== index + 1 ? styleObject: ''"
         v-for="(option, index) in options" :key="index">
-        <div class="m-box" :class="{'m-radio-disabled': disabled || option.disabled}" @click="(disabled || option.disabled) ? () => false : onClick(option.value)">
+        <div class="eh-box" :class="{'eh-radio-disabled': disabled || option.disabled}"
+             @click="(disabled || option.disabled) ? () => false : onClick(option.value)">
           <span class="u-radio" :class="{'u-radio-checked': value === option.value }"></span>
           <span class="u-label">
             <slot :label="option.label">{{ option.label }}</slot>
@@ -63,10 +64,10 @@ function onClick (value: any) {
     </template>
     <template v-else>
       <div
-        class="m-radio-button-wrap"
+        class="eh-radio-button-wrap"
         :class="{
-          'm-radio-button-checked': value === option.value,
-          'm-radio-button-disabled': disabled || option.disabled,
+          'eh-radio-button-checked': value === option.value,
+          'eh-radio-button-disabled': disabled || option.disabled,
         }"
         v-for="(option, index) in options" :key="index"
         @click="(disabled || option.disabled) ? () => false : onClick(option.value)">
@@ -78,19 +79,22 @@ function onClick (value: any) {
   </div>
 </template>
 <style lang="less" scoped>
-.m-radio {
+.eh-radio {
   display: inline-block;
   color: rgba(0, 0, 0, .88);
   font-size: 14px;
   line-height: 1;
-  .m-radio-wrap {
+
+  .eh-radio-wrap {
     display: inline-block;
-    .m-box {
+
+    .eh-box {
       height: 100%;
       display: inline-flex; // 设置为flex布局后，所有的子元素都会变成行内块元素
       align-items: flex-start;
       cursor: pointer;
-      &:not(.m-radio-disabled):hover {
+
+      &:not(.eh-radio-disabled):hover {
         .u-radio {
           border-color: @themeColor;
         }
@@ -146,7 +150,8 @@ function onClick (value: any) {
         display: inline-block;
       }
     }
-    .m-radio-disabled {
+
+    .eh-radio-disabled {
       color: rgba(0, 0, 0, .25);
       cursor: not-allowed;
       .u-radio {
@@ -160,7 +165,8 @@ function onClick (value: any) {
       }
     }
   }
-  .m-radio-button-wrap {
+
+  .eh-radio-button-wrap {
     position: relative;
     display: inline-block;
     height: 32px;
@@ -198,11 +204,13 @@ function onClick (value: any) {
       border-start-end-radius: 6px;
       border-end-end-radius: 6px;
     }
-    &:not(.m-radio-button-disabled):hover {
+
+    &:not(.eh-radio-button-disabled):hover {
       color: @themeColor;
     }
   }
-  .m-radio-button-checked:not(.m-radio-button-disabled) {
+
+  .eh-radio-button-checked:not(.eh-radio-button-disabled) {
     z-index: 1;
     color: @themeColor;
     background: #ffffff;
@@ -211,21 +219,24 @@ function onClick (value: any) {
       background-color: @themeColor;
     }
   }
-  .m-radio-button-disabled {
+
+  .eh-radio-button-disabled {
     color: rgba(0, 0, 0, .25);
     background-color: rgba(0, 0, 0, .04);
     border-color: #d9d9d9;
     cursor: not-allowed;
   }
-  .m-radio-button-disabled.m-radio-button-checked {
+
+  .eh-radio-button-disabled.eh-radio-button-checked {
     background-color: rgba(0, 0, 0, .15);
   }
   .vertical {
     display: block;
   }
 }
-.m-radio-button-solid {
-  .m-radio-button-checked:not(.m-radio-button-disabled) {
+
+.eh-radio-button-solid {
+  .eh-radio-button-checked:not(.eh-radio-button-disabled) {
     color: #fff;
     background: @themeColor;
     border-color: @themeColor;

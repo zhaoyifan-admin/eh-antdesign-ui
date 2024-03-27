@@ -134,11 +134,11 @@ watchEffect(() => {
 })
 </script>
 <template>
-  <div class="m-countdown">
+  <div class="eh-countdown">
     <div class="u-title" :style="titleStyle">
       <slot name="title">{{ props.title }}</slot>
     </div>
-    <div class="m-time">
+    <div class="eh-time">
       <template v-if="showPrefix">
         <span class="u-prefix" v-if="showPrefix || restTime > 0 || restTime === null">
           <slot name="prefix">{{ prefix }}</slot>
@@ -157,7 +157,7 @@ watchEffect(() => {
   </div>
 </template>
 <style lang="less" scoped>
-.m-countdown {
+.eh-countdown {
   display: inline-block;
   line-height: 1.5714285714285714;
   .u-title {
@@ -165,7 +165,8 @@ watchEffect(() => {
     color: rgba(0, 0, 0, .45);
     font-size: 14px;
   }
-  .m-time {
+
+  .eh-time {
     color: rgba(0, 0, 0, .88);
     font-size: 24px;
     font-family: 'Helvetica Neue'; // 保证数字等宽显示

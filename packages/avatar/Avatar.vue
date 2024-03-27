@@ -114,20 +114,20 @@ const strStyle = computed(() => {
 </script>
 <template>
   <div
-    class="m-avatar"
+    class="eh-avatar"
     :class="[avatarStyle === null ? 'avatar-' + size: '', 'avatar-' + shape, {'avatar-image': src}]"
     :style="avatarStyle || {}">
     <img class="u-image" :src="src" :alt="alt" v-if="src" />
-    <span class="m-icon" v-if="!src && showIcon">
+    <span class="eh-icon" v-if="!src && showIcon">
       <slot name="icon"></slot>
     </span>
-    <span class="m-string" :style="strStyle" v-if="!src && !showIcon && showStr">
+    <span class="eh-string" :style="strStyle" v-if="!src && !showIcon && showStr">
       <slot></slot>
     </span>
   </div>
 </template>
 <style lang="less" scoped>
-.m-avatar {
+.eh-avatar {
   color: #fff;
   font-size: 14px;
   line-height: 30px;
@@ -151,7 +151,8 @@ const strStyle = computed(() => {
     height: 100%;
     object-fit: cover;
   }
-  .m-icon {
+
+  .eh-icon {
     display: inline-flex;
     align-items: center;
     color: inherit;
@@ -159,7 +160,8 @@ const strStyle = computed(() => {
     text-align: center;
     vertical-align: -0.125em;
   }
-  .m-string {
+
+  .eh-string {
     position: absolute;
     left: 50%;
     transform-origin: 0 center;
@@ -171,7 +173,8 @@ const strStyle = computed(() => {
   height: 40px;
   line-height: 38px;
   border-radius: 50%;
-  .m-icon {
+
+  .eh-icon {
     font-size: 24px;
   }
   &.avatar-square {
@@ -179,7 +182,7 @@ const strStyle = computed(() => {
   }
 }
 .avatar-default {
-  .m-icon {
+  .eh-icon {
     font-size: 18px;
   }
 }
@@ -189,7 +192,8 @@ const strStyle = computed(() => {
   height: 24px;
   line-height: 22px;
   border-radius: 50%;
-  .m-icon {
+
+  .eh-icon {
     font-size: 14px;
   }
   &.avatar-square {

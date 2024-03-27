@@ -85,17 +85,17 @@ function onOk (e: Event) {
 }
 </script>
 <template>
-  <div class="m-popconfirm">
+  <div class="eh-popconfirm">
     <div
       ref="popRef"
       tabindex="1"
-      class="m-pop-content"
+      class="eh-pop-content"
       :class="{'show-pop': visible}"
       :style="`max-width: ${popMaxWidth}; top: ${-top}px; left: ${-left}px;`"
       @blur="activeBlur ? onBlur() : () => false">
-      <div class="m-pop">
-        <div class="m-pop-message">
-          <span class="m-icon">
+      <div class="eh-pop">
+        <div class="eh-pop-message">
+          <span class="eh-icon">
             <slot name="icon">
               <svg focusable="false" class="u-icon" v-if="iconType==='info'" width="1em" height="1em" viewBox="64 64 896 896" data-icon="info-circle" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm32 664c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V456c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272zm-32-344a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"></path></svg>
               <svg focusable="false" class="u-icon" v-if="iconType==='success'" width="1em" height="1em" style="fill: #52c41a;" viewBox="64 64 896 896" data-icon="check-circle" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"></path></svg>
@@ -103,19 +103,19 @@ function onOk (e: Event) {
               <svg focusable="false" class="u-icon" v-if="iconType==='warning'" width="1em" height="1em" style="fill: #faad14;" viewBox="64 64 896 896" data-icon="exclamation-circle" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 0 1 0-96 48.01 48.01 0 0 1 0 96z"></path></svg>
             </slot>
           </span>
-          <div class="m-title" :class="{'font-weight': showDesc}">
+          <div class="eh-title" :class="{'font-weight': showDesc}">
             <slot name="title">{{ title }}</slot>
           </div>
         </div>
-        <div class="m-pop-description" v-if="showDesc">
+        <div class="eh-pop-description" v-if="showDesc">
           <slot name="description">{{ description }}</slot>
         </div>
-        <div class="m-pop-buttons">
+        <div class="eh-pop-buttons">
           <Button v-if="showCancel" @click="onCancel" size="small" :type=cancelType>{{ cancelText }}</Button>
           <Button @click="onOk" size="small" :type=okType>{{ okText }}</Button>
         </div>
       </div>
-      <div class="m-pop-arrow">
+      <div class="eh-pop-arrow">
         <span class="u-pop-arrow"></span>
       </div>
     </div>
@@ -129,10 +129,11 @@ function onOk (e: Event) {
   </div>
 </template>
 <style lang="less" scoped>
-.m-popconfirm {
+.eh-popconfirm {
   position: relative;
   display: inline-block;
-  .m-pop-content {
+
+  .eh-pop-content {
     position: absolute;
     z-index: 999;
     width: max-content;
@@ -145,7 +146,8 @@ function onOk (e: Event) {
     -ms-transform: scale(.8); /* IE 9 */
     -webkit-transform: scale(.8); /* Safari and Chrome */
     transition: transform .25s, opacity .25s;
-    .m-pop {
+
+    .eh-pop {
       min-width: 32px;
       min-height: 32px;
       padding: 12px;
@@ -160,14 +162,16 @@ function onOk (e: Event) {
       background-color: #FFF;
       border-radius: 8px;
       box-shadow: 0 6px 16px 0 rgba(0, 0, 0, .08), 0 3px 6px -4px rgba(0, 0, 0, .12), 0 9px 28px 8px rgba(0, 0, 0, .05);
-      .m-pop-message {
+
+      .eh-pop-message {
         position: relative;
         margin-bottom: 8px;
         font-size: 14px;
         display: flex;
         flex-wrap: nowrap;
         align-items: start;
-        .m-icon {
+
+        .eh-icon {
           content: '\f8f5';
           flex: none;
           line-height: 1;
@@ -180,7 +184,8 @@ function onOk (e: Event) {
             fill: @themeColor;
           }
         }
-        .m-title {
+
+        .eh-title {
           flex: auto;
           margin-inline-start: 8px;
         }
@@ -188,20 +193,24 @@ function onOk (e: Event) {
           font-weight: 600;
         }
       }
-      .m-pop-description {
+
+      .eh-pop-description {
         position: relative;
         margin-inline-start: 22px;
         margin-bottom: 8px;
         font-size: 14px;
       }
-      .m-pop-buttons {
+
+      .eh-pop-buttons {
         text-align: end;
-        & > .m-btn-wrap {
+
+        & > .eh-btn-wrap {
           margin-inline-start: 8px;
         }
       }
     }
-    .m-pop-arrow {
+
+    .eh-pop-arrow {
       position: absolute;
       z-index: 9;
       left: 50%;

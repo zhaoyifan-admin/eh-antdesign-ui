@@ -156,7 +156,7 @@ function startMove () {
   <div
     v-if="!vertical"
     ref="horizonRef"
-    class="m-slider-horizon"
+    class="eh-slider-horizon"
     @mouseenter="onStop"
     @mouseleave="onStart"
     :style="`height: ${height}px; width: ${totalWidth}; background: ${backgroundColor}; --fontSize: ${fontSize}px; --fontWeight: ${fontWeight}; --color: ${color};`">
@@ -173,13 +173,13 @@ function startMove () {
   </div>
   <div
     v-else
-    class="m-slider-vertical"
+    class="eh-slider-vertical"
     @mouseenter="onStop"
     @mouseleave="onStart"
     :style="`height: ${height}px; width: ${totalWidth}; background: ${backgroundColor}; --fontSize: ${fontSize}px; --fontWeight: ${fontWeight}; --color: ${color};`">
     <TransitionGroup name="slide">
       <div
-        class="m-slider"
+        class="eh-slider"
         :style="`width: calc(${totalWidth} - ${2*gap}px); height: ${height}px;`"
         v-for="(text, index) in <Text[]>textData" :key="index"
         v-show="actIndex===index">
@@ -197,7 +197,7 @@ function startMove () {
 </template>
 <style lang="less" scoped>
 // 水平滚动
-.m-slider-horizon {
+.eh-slider-horizon {
   box-shadow: 0px 0px 5px #D3D3D3;
   border-radius: 6px;
   white-space: nowrap;
@@ -238,12 +238,14 @@ function startMove () {
   transform: translateY(-50px) scale(.5);
   opacity: 0;
 }
-.m-slider-vertical {
+
+.eh-slider-vertical {
   position: relative;
   overflow: hidden;
   border-radius: 6px;
   line-height: 1.5714285714285714;
-  .m-slider {
+
+  .eh-slider {
     position: absolute;
     left: 0;
     right: 0;

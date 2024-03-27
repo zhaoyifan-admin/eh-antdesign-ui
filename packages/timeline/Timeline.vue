@@ -65,13 +65,13 @@ watchEffect(() => {
 }, { flush: 'post' })
 </script>
 <template>
-  <div class="m-timeline-area" :style="`width: ${totalWidth};`">
-    <div class="m-timeline">
+  <div class="eh-timeline-area" :style="`width: ${totalWidth};`">
+    <div class="eh-timeline">
       <div
-        :class="['m-timeline-item', {'last': index === timelineData.length - 1}]"
+        :class="['eh-timeline-item', {'last': index === timelineData.length - 1}]"
         v-for="(data, index) in timelineData" :key="index">
         <span :class="`u-tail ${mode}-tail`" :style="`border-left-style: ${lineStyle};`"></span>
-        <div :class="`m-dot ${mode}-dot`" :style="`height: ${dotsHeight[index]}`">
+        <div :class="`eh-dot ${mode}-dot`" :style="`height: ${dotsHeight[index]}`">
           <slot name="dot" :index="index">
             <span class="u-dot" v-if="data.color === 'red'" :style="{borderColor: ColorStyle.red}"></span>
             <span class="u-dot" v-else-if="data.color === 'gray'" :style="{borderColor: ColorStyle.gray}"></span>
@@ -88,9 +88,9 @@ watchEffect(() => {
   </div>
 </template>
 <style lang="less" scoped>
-.m-timeline-area {
-  .m-timeline {
-    .m-timeline-item {
+.eh-timeline-area {
+  .eh-timeline {
+    .eh-timeline-item {
       position: relative;
       padding-bottom: 30px;
       .u-tail {
@@ -112,7 +112,8 @@ watchEffect(() => {
       .right-tail {
         right: 5px;
       }
-      .m-dot {
+
+      .eh-dot {
         position: absolute;
         display: flex;
         align-items: center;
