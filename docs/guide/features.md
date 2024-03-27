@@ -9,6 +9,7 @@
 - 所有组件样式 `CSS` 均使用 `box-sizing: border-box;` 模式！
 - 部分组件样式尚未完美适配暗黑模式，可切换至 `light` 模式查看！
 - 开箱即用！
+- <Tag color="#FC5404">注意：本组件内使用了`postcss-pxtorem`插件【px转rem】，请酌情使用其他转换插件。</Tag>
 
 ## 使用方式
 
