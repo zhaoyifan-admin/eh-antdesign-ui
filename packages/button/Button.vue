@@ -58,15 +58,15 @@ function getUrl (route: Route) {
 }
 </script>
 <template>
-  <div :class="['m-btn-wrap', {'center': center}]">
+  <div :class="['eh-btn-wrap', {'center': center}]">
     <a
       @click="onClick"
       :href="getUrl(route)"
       :target="isRoute ? target : '_self'"
       :disabled="disabled"
-      class="m-btn"
-      :class="[type, size, {[effect]: type === 'default', disabled: disabled, 'm-btn-loading': !isRoute && loading}]">
-      <span v-show="!isRoute" :class="[`m-loading-icon`, {[`loading-${size}`]: loading}]">
+      class="eh-btn"
+      :class="[type, size, {[effect]: type === 'default', disabled: disabled, 'eh-btn-loading': !isRoute && loading}]">
+      <span v-show="!isRoute" :class="[`eh-loading-icon`, {[`loading-${size}`]: loading}]">
         <span class="u-spin-circle" :class="`spin-${size}`"></span>
       </span>
       <span class="u-text">
@@ -78,9 +78,10 @@ function getUrl (route: Route) {
 <style lang="less" scoped>
 @primary: @themeColor;
 @danger: #FF4D4F;
-.m-btn-wrap {
+.eh-btn-wrap {
   display: inline-block;
-  .m-btn {
+
+  .eh-btn {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -94,7 +95,8 @@ function getUrl (route: Route) {
     user-select: none;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    .m-loading-icon {
+
+    .eh-loading-icon {
       display: inline-flex;
       align-items: center;
       text-align: left;
@@ -139,7 +141,8 @@ function getUrl (route: Route) {
       height: 100%;
     }
   }
-  .m-btn-loading {
+
+  .eh-btn-loading {
     opacity: .65;
     pointer-events: none;
   }
@@ -223,20 +226,20 @@ function getUrl (route: Route) {
   .small {
     font-size: 14px;
     height: 24px;
-    padding: 0px 7px;
+    padding: 0 7px;
     border-radius: 4px;
   }
   .middle {
     font-size: 14px;
     height: 32px;
     padding: 4px 15px;
-    border-radius: 6px;
+    border-radius: 5px;
   }
   .large {
     font-size: 16px;
     height: 40px;
-    padding: 6.428571428571429px 15px;
-    border-radius: 8px;
+    padding: 6px 15px;
+    border-radius: 6px;
   }
   .disabled {
     border-color: #d9d9d9;
