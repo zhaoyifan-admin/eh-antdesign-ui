@@ -41,11 +41,11 @@ const showTitle = computed(() => {
 </script>
 <template>
   <div
-    class="m-card"
-    :class="{'bordered': bordered, 'm-small-card': size === 'small'}"
+    class="eh-card b-radius-5 font-14"
+    :class="{'bordered': bordered, 'eh-small-card': size === 'small'}"
     :style="`width: ${cardWidth};`">
-    <div class="m-card-head" :style="headStyle" v-if="showTitle">
-      <div class="m-head-wrapper">
+    <div class="eh-card-head p-inline-16 p-block-10" :style="headStyle" v-if="showTitle">
+      <div class="eh-head-wrapper">
         <div class="u-title">
           <slot name="title">{{ title }}</slot>
         </div>
@@ -54,7 +54,7 @@ const showTitle = computed(() => {
         </div>
       </div>
     </div>
-    <div class="m-card-body" :style="bodyStyle">
+    <div class="eh-card-body" :style="bodyStyle">
       <slot></slot>
     </div>
   </div>
@@ -63,28 +63,28 @@ const showTitle = computed(() => {
 .bordered {
   border: 1px solid #f0f0f0;
 }
-.m-card {
-  font-size: 14px;
+
+.eh-card {
   color: rgba(0, 0, 0, .88);
   line-height: 1.5714285714285714;
   position: relative;
   background: #ffffff;
-  border-radius: 8px;
   text-align: left;
-  .m-card-head {
+
+  .eh-card-head {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-height: 56px;
+    min-height: 46px;
     margin-bottom: -1px;
-    padding: 0 24px;
     color: rgba(0, 0, 0, .88);
     font-weight: 600;
     font-size: 16px;
     background: transparent;
     border-bottom: 1px solid #f0f0f0;
     border-radius: 8px 8px 0 0;
-    .m-head-wrapper {
+
+    .eh-head-wrapper {
       width: 100%;
       display: flex;
       align-items: center;
@@ -102,18 +102,21 @@ const showTitle = computed(() => {
       }
     }
   }
-  .m-card-body {
-    padding: 24px;
+
+  .eh-card-body {
+    padding: 16px;
     border-radius: 0 0 8px 8px;
   }
 }
-.m-small-card {
-  .m-card-head {
+
+.eh-small-card {
+  .eh-card-head {
     min-height: 38px;
     padding: 0 12px;
     font-size: 14px;
   }
-  .m-card-body {
+
+  .eh-card-body {
     padding: 12px;
   }
 }
