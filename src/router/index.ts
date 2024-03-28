@@ -127,6 +127,12 @@ export const routes = [
         component: () => import('@/views/Drawer.vue')
       },
       {
+        path: '/ehcrud',
+        name: 'EhCrud',
+        meta: { title: '多功能表格' },
+        component: () => import('@/views/Crud.vue'),
+      },
+      {
         path: '/ellipsis',
         name: 'Ellipsis',
         meta: { title: '文本省略' },

@@ -1,5 +1,6 @@
 import './less/global.less'
 import './less/common.scss'
+import './utils/iconfont/iconfont.css'
 import {
   dateFormat,
   requestAnimationFrame,
@@ -33,6 +34,7 @@ import DescriptionsItem from './descriptionsitem'
 import Dialog from './dialog'
 import Divider from './divider'
 import Drawer from './drawer'
+import EhCrud from './crud'
 import Ellipsis from './ellipsis'
 import Empty from './empty'
 import Flex from './flex'
@@ -92,6 +94,7 @@ const components = [
   Dialog,
   Divider,
   Drawer,
+  EhCrud,
   Ellipsis,
   Empty,
   Flex,
@@ -177,6 +180,7 @@ export {
   Dialog,
   Divider,
   Drawer,
+  EhCrud,
   Ellipsis,
   Empty,
   Flex,

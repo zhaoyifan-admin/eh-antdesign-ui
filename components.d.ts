@@ -7,6 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AAlert: typeof import('ant-design-vue/es')['Alert']
+    AButton: typeof import('ant-design-vue/es')['Button']
     ACascader: typeof import('ant-design-vue/es')['Cascader']
     ACheckbox: typeof import('ant-design-vue/es')['Checkbox']
     ACheckboxGroup: typeof import('ant-design-vue/es')['CheckboxGroup']
@@ -15,10 +17,17 @@ declare module 'vue' {
     ACollapsePanel: typeof import('ant-design-vue/es')['CollapsePanel']
     AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
     ADivider: typeof import('ant-design-vue/es')['Divider']
+    AEmpty: typeof import('ant-design-vue/es')['Empty']
+    AFloatButton: typeof import('ant-design-vue/es')['FloatButton']
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
+    AModal: typeof import('ant-design-vue/es')['Modal']
     AProgress: typeof import('ant-design-vue/es')['Progress']
     ARow: typeof import('ant-design-vue/es')['Row']
+    ASpace: typeof import('ant-design-vue/es')['Space']
+    ATable: typeof import('ant-design-vue/es')['Table']
+    ATabPane: typeof import('ant-design-vue/es')['TabPane']
+    ATabs: typeof import('ant-design-vue/es')['Tabs']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

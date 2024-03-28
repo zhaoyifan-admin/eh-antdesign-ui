@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "plugins"; /* Project id 4485457 */
+    src: url('iconfont.woff2?t=1711592160242') format('woff2'),
+    url('iconfont.woff?t=1711592160242') format('woff'),
+    url('iconfont.ttf?t=1711592160242') format('truetype');
+}
+
+.plugins {
+    font-family: "plugins" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shuaxin:before {
+    content: "\e80a";
+}
+
+.icon-dayin:before {
+    content: "\e631";
+}
+
+.icon-shezhi:before {
+    content: "\e851";
+}
+
+.icon-xiazai:before {
+    content: "\e65d";
+}
+
+.icon-gengduogongneng:before {
+    content: "\e7a6";
+}
+

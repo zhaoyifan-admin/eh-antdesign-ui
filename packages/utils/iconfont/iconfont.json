@@ -1,0 +1,44 @@
+{
+  "id": "4485457",
+  "name": "plugin-ui-icon",
+  "font_family": "plugins",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2932855",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "e80a",
+      "unicode_decimal": 59402
+    },
+    {
+      "icon_id": "5477165",
+      "name": "打印",
+      "font_class": "dayin",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "8288873",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e851",
+      "unicode_decimal": 59473
+    },
+    {
+      "icon_id": "10194319",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "11803658",
+      "name": "更多功能",
+      "font_class": "gengduogongneng",
+      "unicode": "e7a6",
+      "unicode_decimal": 59302
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 ------------------------------- */
 @for $i from 5 through 99 {
   .font-#{$i} {
-    font-size: #{$i}px;
+    font-size: #{$i}px !important;
   }
 }
 
@@ -45,4 +45,12 @@
   .p-block-#{$i} {
     padding-block: #{$i}px !important;
   }
+}
+
+.t-left {
+  text-align: left;
+}
+
+.t-right {
+  text-align: right;
 }
