@@ -19,6 +19,7 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --vp-layout-max-width: 1640px;
   --vp-button-brand-border: var(--vp-c-brand-light);
   --vp-button-brand-text: var(--vp-c-white);
   --vp-button-brand-bg: var(--vp-c-brand);
@@ -117,6 +118,14 @@
 }
 .vp-doc p {
   margin: 0;
+}
+
+.vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
+  color: #c41d7f;
+}
+
+.VPDoc.has-aside .content-container {
+  max-width: none !important;
 }
 /* Transition by color instead of opacity */
 .dark .vp-doc .custom-block a {

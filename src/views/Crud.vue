@@ -21,7 +21,9 @@ const columns = [
 </script>
 
 <template>
-  <EhCrud :columns="columns"></EhCrud>
+  <eh-Crud :columns="columns" :options="{
+    bordered: true
+  }"></eh-Crud>
 </template>
 
 <style scoped lang="less">

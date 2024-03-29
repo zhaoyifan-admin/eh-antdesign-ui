@@ -1,16 +1,19 @@
 @font-face {
     font-family: "plugins"; /* Project id 4485457 */
-    src: url('iconfont.woff2?t=1711592160242') format('woff2'),
-    url('iconfont.woff?t=1711592160242') format('woff'),
-    url('iconfont.ttf?t=1711592160242') format('truetype');
+    src: url('iconfont.woff2?t=1711676653341') format('woff2'),
+    url('iconfont.woff?t=1711676653341') format('woff'),
+    url('iconfont.ttf?t=1711676653341') format('truetype');
 }
 
 .plugins {
     font-family: "plugins" !important;
-    font-size: 16px;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xinzeng:before {
+    content: "\e611";
 }
 
 .icon-shuaxin:before {

@@ -5,6 +5,7 @@ interface paramsType {
   showHelpModal?: boolean
   size?: string
   tableDate?: object[]
+  options?: Record<string, any>
 }
 
 const tipsModal = defineAsyncComponent(() => import('./components/tipsModal.vue'))
@@ -19,6 +20,9 @@ const props = withDefaults(defineProps<paramsType>(), {
   tableDate: () => {
     return []
   },
+  options: () => {
+    return {}
+  },
 })
 
 const handleClick = () => {
@@ -29,10 +33,15 @@ const handleClick = () => {
 <template>
   <a-row class="mb10">
     <a-col :span="12">
-      <a-button type="primary">新增</a-button>
+      <a-button type="primary">
+        <template #icon>
+          <i class="plugins icon-xinzeng"></i>
+        </template>
+        新增
+      </a-button>
     </a-col>
-    <a-col class="t-right" :span="12">
-      <a-space size="middle">
+    <a-col class="eh-menu-right t-right" :span="12">
+      <a-space size="small">
         <i class="plugins icon-shuaxin font-23"></i>
         <i class="plugins icon-dayin font-23"></i>
         <i class="plugins icon-xiazai font-23"></i>
@@ -46,11 +55,7 @@ const handleClick = () => {
     :data-source="tableDate"
     :loading="loading"
     :size="size"
-    :locale="{
-      filterConfirm: '确定',
-      filterReset: '重置',
-    }"
-    bordered
+    :bordered="options.bordered"
   >
 
   </a-table>
@@ -59,7 +64,10 @@ const handleClick = () => {
 </template>
 
 <style scoped lang="less">
-.plugins {
-  font-weight: bold;
+.eh-menu-right {
+  .plugins {
+    font-weight: 300;
+  }
 }
+
 </style>

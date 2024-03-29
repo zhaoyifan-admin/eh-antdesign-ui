@@ -143,6 +143,10 @@ export default defineConfig({
               link: '/guide/components/countdown'
             },
             {
+              text: '多功能表格 Crud',
+              link: '/guide/components/crud',
+            },
+            {
               text: '日期选择 DatePicker',
               link: '/guide/components/datepicker'
             },
