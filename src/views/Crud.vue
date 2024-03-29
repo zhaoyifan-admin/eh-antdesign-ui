@@ -18,12 +18,13 @@ const columns = [
     dataIndex: 'email',
   },
 ]
+const options = reactive({
+  bordered: true,
+})
 </script>
 
 <template>
-  <eh-Crud :columns="columns" :options="{
-    bordered: true
-  }"></eh-Crud>
+  <eh-Crud :columns="columns" :options="options"></eh-Crud>
 </template>
 
 <style scoped lang="less">
