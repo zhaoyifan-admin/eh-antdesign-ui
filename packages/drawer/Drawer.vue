@@ -9,7 +9,7 @@ interface Props {
   extra?: string // 抽屉右上角的操作区域 string | slot
   placement?: 'top'|'right'|'bottom'|'left' // 抽屉的方向
   zIndex?: number // 设置 Drawer 的 z-index
-  open?: boolean // (v-model) 抽屉是否可见
+  open?: boolean // (v-modal) 抽屉是否可见
 }
 const props = withDefaults(defineProps<Props>(), {
   title: '',

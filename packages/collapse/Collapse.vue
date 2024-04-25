@@ -8,7 +8,7 @@ interface Collapse {
 }
 interface Props {
   collapseData: Collapse[] // 折叠面板数据，可使用 v-slot 替换对应索引的 header 和 text
-  activeKey?: number[] | number | string[] | string | null // (v-model)当前激活 tab 面板的 key
+  activeKey?: number[] | number | string[] | string | null // (v-modal)当前激活 tab 面板的 key
   copyable?: boolean // 是否可复制面板内容
   lang?: string // 面板右上角固定内容，例如标识language string | slot
   fontSize?: number // 面板标题和内容的字体大小

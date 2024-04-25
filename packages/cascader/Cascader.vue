@@ -14,7 +14,7 @@ interface Props {
   value?: string // 下拉字典项的值字段名
   children?: string // 下拉字典项的后代字段名
   placeholder?: string|string[] // 三级下拉各自占位文本
-  changeOnSelect?: boolean // 当此项为 true 时，点选每级菜单选项值（v-model）都会发生变化；否则只有选择第三级选项后选项值才会变化
+  changeOnSelect?: boolean // 当此项为 true 时，点选每级菜单选项值（v-modal）都会发生变化；否则只有选择第三级选项后选项值才会变化
   gap?: number // 级联下拉框相互间隙宽度，单位px
   width?: number|number[] // 三级下拉各自宽度
   height?: number // 下拉框高度
@@ -27,7 +27,7 @@ interface Props {
   */
   filter?: Function|true // 过滤条件函数，仅当支持搜索时生效
   maxDisplay?: number // 下拉面板最多能展示的下拉项数，超过后滚动显示
-  selectedValue?: (number|string)[] // （v-model）级联选中项
+  selectedValue?: (number | string)[] // （v-modal）级联选中项
 }
 const props = withDefaults(defineProps<Props>(), {
   options: () => [],

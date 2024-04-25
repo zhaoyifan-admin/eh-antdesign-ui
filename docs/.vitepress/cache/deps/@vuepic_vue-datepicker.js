@@ -5922,7 +5922,7 @@ var Pe = (e2) => {
 var fl = (e2, t2, r) => {
   const a3 = ref(), { defaultedTextInput: n, getDefaultPattern: o } = Pe(t2), i2 = ref(""), c2 = toRef(t2, "format");
   watch(a3, () => {
-    e2("internal-model-change", a3.value);
+    e2('internal-modal-change', a3.value)
   }), watch(c2, () => {
     ne();
   });
@@ -5999,9 +5999,9 @@ var fl = (e2, t2, r) => {
     }
     return t2.modelType ? t2.modelType === "date" || t2.modelType === "timestamp" ? T2(new Date(s3)) : t2.modelType === "format" && (typeof t2.format == "string" || !t2.format) ? parse(s3, o(), /* @__PURE__ */ new Date()) : T2(parse(s3, t2.modelType, /* @__PURE__ */ new Date())) : T2(new Date(s3));
   }, d3 = (s3) => s3 ? t2.utc ? qr(s3, t2.utc === "preserve", t2.enableSeconds) : t2.modelType ? t2.modelType === "timestamp" ? +p(s3) : t2.modelType === "format" && (typeof t2.format == "string" || !t2.format) ? D2(p(s3)) : D2(p(s3), t2.modelType, true) : p(s3) : "", Y2 = (s3, J = false) => {
-    if (e2("update:model-value", s3), t2.emitTimezone && J) {
+    if (e2('update:modal-value', s3), t2.emitTimezone && J) {
       const de = Array.isArray(s3) ? s3.map(($) => et(Ce($)), t2.emitTimezone) : et(Ce(s3), t2.emitTimezone);
-      e2("update:model-timezone-value", de);
+      e2('update:modal-timezone-value', de)
     }
   }, Z = (s3) => Array.isArray(a3.value) ? t2.multiDates ? a3.value.map((J) => s3(J)) : [
     s3(a3.value[0]),
@@ -6248,7 +6248,7 @@ var Ut = (e2, t2) => {
   }), o = computed({
     get: () => e2.internalModelValue,
     set: (p) => {
-      !e2.readonly && !e2.disabled && t2("update:internal-model-value", p);
+      !e2.readonly && !e2.disabled && t2('update:internal-modal-value', p)
     }
   }), i2 = computed(
     () => (p) => a3.value[p] ? a3.value[p].month : 0
@@ -7485,7 +7485,7 @@ var Il = defineComponent({
     ...tt
   },
   emits: [
-    "update:internal-model-value",
+    'update:internal-modal-value',
     "overlay-closed",
     "reset-flow",
     "range-start",
@@ -7612,7 +7612,7 @@ var El = defineComponent({
   props: {
     ...tt
   },
-  emits: ["update:internal-model-value", "reset-flow", "range-start", "range-end", "auto-apply"],
+  emits: ['update:internal-modal-value', 'reset-flow', 'range-start', 'range-end', 'auto-apply'],
   setup(e2, { expose: t2, emit: r }) {
     const a3 = r, n = e2, { groupedYears: o, modelValue: i2, focusYear: c2, selectYear: p, setHoverValue: T2 } = Bl(n, a3), { defaultedConfig: D2 } = Pe(n);
     return t2({ getSidebarProps: () => ({
@@ -8233,7 +8233,7 @@ var eo = defineComponent({
   props: {
     ...tt
   },
-  emits: ["update:internal-model-value", "time-update", "am-pm-change"],
+  emits: ['update:internal-modal-value', 'time-update', 'am-pm-change'],
   setup(e2, { expose: t2, emit: r }) {
     const a3 = r, n = e2, o = useSlots(), i2 = qe(o, "timePicker"), { time: c2, modelValue: p, disabledTimesConfig: T2, updateTime: D2, validateTime: R2 } = xl(n, a3);
     return t2({ getSidebarProps: () => ({
@@ -9005,7 +9005,7 @@ var yo = defineComponent({
     "tooltip-open",
     "tooltip-close",
     "mount",
-    "update:internal-model-value",
+    'update:internal-modal-value',
     "update-flow-step",
     "reset-flow",
     "auto-apply",
@@ -9264,7 +9264,7 @@ var ko = defineComponent({
     ...tt
   },
   emits: [
-    "update:internal-model-value",
+    'update:internal-modal-value',
     "reset-flow",
     "overlay-closed",
     "auto-apply",
@@ -9390,7 +9390,7 @@ var pa = defineComponent({
     "flow-step",
     "update-month-year",
     "invalid-select",
-    "update:internal-model-value",
+    'update:internal-modal-value',
     "recalculate-position",
     "invalid-fixed-range",
     "tooltip-open",
@@ -9579,7 +9579,7 @@ var pa = defineComponent({
               onUpdateMonthYear: U[11] || (U[11] = (G2) => N.$emit("update-month-year", G2)),
               onAutoApplyInvalid: U[12] || (U[12] = (G2) => N.$emit("auto-apply-invalid", G2)),
               onInvalidDate: U[13] || (U[13] = (G2) => N.$emit("invalid-date", G2)),
-              "onUpdate:internalModelValue": U[14] || (U[14] = (G2) => N.$emit("update:internal-model-value", G2))
+              'onUpdate:internalModelValue': U[14] || (U[14] = (G2) => N.$emit('update:internal-modal-value', G2)),
             }), createSlots({ _: 2 }, [
               renderList(Y2.value, (G2, We) => ({
                 name: G2,
@@ -9657,15 +9657,15 @@ var Ro = defineComponent({
     ...rn
   },
   emits: [
-    "update:model-value",
-    "update:model-timezone-value",
+    'update:modal-value',
+    'update:modal-timezone-value',
     "text-submit",
     "closed",
     "cleared",
     "open",
     "focus",
     "blur",
-    "internal-model-change",
+    'internal-modal-change',
     "recalculate-position",
     "flow-step",
     "update-month-year",
@@ -9746,7 +9746,7 @@ var Ro = defineComponent({
       !n.disabled && !n.readonly && (l(pa, n), Z(false), i2.value = true, i2.value && a3("open"), i2.value || Yt(), J(n.modelValue));
     }, We = () => {
       var x2;
-      h4.value = "", Yt(), (x2 = R2.value) == null || x2.setParsedDate(null), a3("update:model-value", null), a3("update:model-timezone-value", null), a3("cleared"), ie.value.closeOnClearValue && Ze();
+      h4.value = '', Yt(), (x2 = R2.value) == null || x2.setParsedDate(null), a3('update:modal-value', null), a3('update:modal-timezone-value', null), a3('cleared'), ie.value.closeOnClearValue && Ze()
     }, je = () => {
       const x2 = s3.value;
       return !x2 || !Array.isArray(x2) && b2(x2) ? true : Array.isArray(x2) ? n.multiDates || x2.length === 2 && b2(x2[0]) && b2(x2[1]) ? true : n.partialRange && !n.timePicker ? b2(x2[0]) : false : false;

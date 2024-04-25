@@ -9,7 +9,7 @@ interface Props {
   options: Array<Option> // 单选元素数据
   disabled?: boolean // 是否禁用
   vertical?: boolean // 是否垂直排列
-  value?: any // 当前选中的值（v-model）
+  value?: any // 当前选中的值（v-modal）
   gap?: number // 多个单选框之间的间距，单位px，垂直排列时，间距即垂直间距
   button?: boolean // 是否启用按钮样式
   buttonStyle?: 'outline'|'solid' // 按钮样式风格

@@ -6,18 +6,46 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "201556",
+      "name": "查看",
+      "font_class": "chakan",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1301355",
+      "name": "编辑",
+      "font_class": "bianji",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "3553083",
+      "name": "清空",
+      "font_class": "qingkong",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "10199159",
+      "name": "查找",
+      "font_class": "chazhao",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "579551",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "e782",
+      "unicode_decimal": 59266
+    },
+    {
       "icon_id": "12250145",
       "name": "新增",
       "font_class": "xinzeng",
       "unicode": "e611",
       "unicode_decimal": 58897
-    },
-    {
-      "icon_id": "2932855",
-      "name": "刷新",
-      "font_class": "shuaxin",
-      "unicode": "e80a",
-      "unicode_decimal": 59402
     },
     {
       "icon_id": "5477165",

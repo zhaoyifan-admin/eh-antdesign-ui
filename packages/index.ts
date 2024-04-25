@@ -12,8 +12,15 @@ import {
   add,
   downloadFile,
   formatNumber,
-  toggleDark
+  toggleDark,
 } from './utils'
+import {
+  gps84_To_Gcj02,
+  gcj02_To_Gps84,
+  gps84_To_bd09,
+  bd09_To_gps84,
+  gcj02_To_Bd09,
+} from './utils/GPSUtil'
 import type { App } from 'vue'
 import Alert from './alert'
 import Avatar from './avatar'
@@ -131,7 +138,7 @@ const components = [
   Upload,
   Video,
   Waterfall,
-  Watermark
+  Watermark,
 ]
 
 // 定义 install 方法
@@ -158,7 +165,12 @@ export {
   add,
   downloadFile,
   formatNumber,
-  toggleDark
+  toggleDark,
+  gps84_To_Gcj02,
+  gcj02_To_Gps84,
+  gps84_To_bd09,
+  bd09_To_gps84,
+  gcj02_To_Bd09,
 }
 export {
   Alert,
@@ -217,10 +229,10 @@ export {
   Upload,
   Video,
   Waterfall,
-  Watermark
+  Watermark,
 }
 
 const EhAntdesignUI = {
-  install
+  install,
 }
 export default EhAntdesignUI

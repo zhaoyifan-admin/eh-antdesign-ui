@@ -21,7 +21,7 @@ interface Props {
   size?: 'large'|'middle'|'small' // 输入框大小
   prefix?: string // 前缀图标 string | slot
   suffix?: string // 后缀图标 string | slot
-  value?: string // 输入框内容(v-model)
+  value?: string // 输入框内容(v-modal)
   valueModifiers?: object // 用于访问组件的v-model上添加的修饰符
 }
 const props = withDefaults(defineProps<Props>(), {

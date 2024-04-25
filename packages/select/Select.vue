@@ -23,7 +23,7 @@ interface Props {
   width?: number // 宽度
   height?: number // 高度
   maxDisplay?: number // 下拉面板最多能展示的下拉项数，超过后滚动显示
-  modelValue?: number|string|null // （v-model）当前选中的option条目
+  modelValue?: number | string | null // （v-modal）当前选中的option条目
 }
 const props = withDefaults(defineProps<Props>(), {
   options: () => [],

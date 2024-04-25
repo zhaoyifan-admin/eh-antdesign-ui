@@ -8,6 +8,10 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-typescript'
   ],
+  rules: {
+    //关闭组件命名规则
+    'vue/multi-word-component-names': 'off',
+  },
   parserOptions: {
     ecmaVersion: 'latest'
   }

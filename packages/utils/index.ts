@@ -1,7 +1,7 @@
 /*
-  value: 13位时间戳 | new Date() | Date()
-  console.log(dateFormat(1680227496788, 'YYYY-MM-DD HH:mm:ss'))
-  format => YY：年，M：月，D：日，H：时，m：分钟，s：秒，SSS：毫秒
+value: 13位时间戳 | new Date() | Date()
+console.log(dateFormat(1680227496788, 'YYYY-MM-DD HH:mm:ss'))
+format => YY：年，M：月，D：日，H：时，m：分钟，s：秒，SSS：毫秒
 */
 export function dateFormat (value: number|string|Date = Date.now(), format = 'YYYY-MM-DD HH:mm:ss'): string {
   if (typeof value === 'number' || typeof value === 'string') {
@@ -210,4 +210,16 @@ export function toggleDark () {
   // 如果 <html> 上 dark 类值已存在，则移除它，否则添加它
   document.documentElement.classList.toggle('dark')
 }
-  
+
+export function deepClone(obj: any) {
+  if (typeof obj !== 'object') return
+  const newObj: any = obj instanceof Array ? [] : {}
+  for (const key in obj) {
+    if (typeof obj[key] === 'object') {
+      newObj[key] = deepClone(obj[key])
+    } else {
+      newObj[key] = obj[key]
+    }
+  }
+  return newObj
+}

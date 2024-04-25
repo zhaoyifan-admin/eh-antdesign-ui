@@ -97,7 +97,7 @@ function onChange (pagination: {page: number, pageSize: number}) {
     <template #name="record">
       hello {{ record.name }}
     </template>
-    <template #job="{ job, index }">
+      <template #job="{ job }">
       hi {{ job }}
     </template>
     </Table>

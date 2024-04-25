@@ -9,7 +9,7 @@ interface Props {
   color?: string // 字符选中颜色
   gap?: number // 字符间距，单位px
   disabled?: boolean // 只读，无法进行交互
-  value?: number // v-model 当前数，受控值 1,2,3...
+  value?: number // v-modal 当前数，受控值 1,2,3...
 }
 const props = withDefaults(defineProps<Props>(), {
   allowClear: true,

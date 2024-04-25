@@ -45,7 +45,7 @@ var isReservedProp = makeMap(
   ',key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted',
 )
 var isBuiltInDirective = makeMap(
-  'bind,cloak,else-if,else,for,html,if,model,on,once,pre,show,slot,text,memo',
+  'bind,cloak,else-if,else,for,html,if,modal,on,once,pre,show,slot,text,memo',
 )
 var cacheStringFunction = (fn) => {
   const cache = /* @__PURE__ */ Object.create(null)
@@ -9754,7 +9754,7 @@ function useModel(props, name, options = EMPTY_OBJ) {
       },
       set(value) {
         const rawProps = i.vnode.props
-        if (!(rawProps && // check if parent has passed v-model
+        if (!(rawProps && // check if parent has passed v-modal
           (name in rawProps || camelizedName in rawProps || hyphenatedName in rawProps) && (`onUpdate:${name}` in rawProps || `onUpdate:${camelizedName}` in rawProps || `onUpdate:${hyphenatedName}` in rawProps)) && hasChanged(value, localValue)) {
           localValue = value
           trigger2()

@@ -10,7 +10,7 @@ interface Props {
   step?: number // 步长，取值必须大于0，并且可被 (max - min) 整除
   tipFormatter?: Function // Slider 会把当前值传给 tipFormatter，并在 Tooltip 中显示 tipFormatter 的返回值
   hideTip?: boolean // 是否隐藏 Tooltip
-  value?: number|number[] // (v-model)设置当前取值，当 range 为 false 时，使用 number，否则用 [number, number]
+  value?: number | number[] // (v-modal)设置当前取值，当 range 为 false 时，使用 number，否则用 [number, number]
 }
 const props = withDefaults(defineProps<Props>(), {
   width: '100%',

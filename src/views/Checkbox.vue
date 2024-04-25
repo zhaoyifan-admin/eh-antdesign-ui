@@ -62,7 +62,7 @@ const optionsDisabled = ref([
         value: 6
       }
     ])
-const value = ref([2]) // 多选框v-model
+const value = ref([2]) // 多选框v-modal
 watchEffect(() => {
   console.log('value:', value.value)
 })
@@ -70,7 +70,7 @@ function onChange (value: any[]) {
   console.log('change:', value)
 }
 
-const checkAll = ref(false) // 全选v-model
+const checkAll = ref(false) // 全选v-modal
 const indeterminate = computed(() => { // 全选样式控制
   if (value.value.length > 0 && value.value.length < options.value.length) {
     return true

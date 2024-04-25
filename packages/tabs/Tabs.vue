@@ -13,7 +13,7 @@ interface Props {
   size?: 'small'|'middle'|'large' // 标签页大小
   type?: 'line'|'card' // 标签页的样式
   gutter?: number // tabs 之前的间隙大小，单位px
-  activeKey?: string|number // (v-model)当前激活 tab 面板的 key
+  activeKey?: string | number // (v-modal)当前激活 tab 面板的 key
 }
 const props = withDefaults(defineProps<Props>(), {
   tabPages: () => [],

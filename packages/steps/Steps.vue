@@ -6,7 +6,7 @@ interface Step {
 }
 interface Props {
   steps: Step[] // 步骤数组
-  current?: number // 当前选中的步骤（v-model），设置 v-model 后，Steps 变为可点击状态。从1开始计数
+  current?: number // 当前选中的步骤（v-modal），设置 v-modal 后，Steps 变为可点击状态。从1开始计数
   width?: number|string // 步骤条总宽度
   descMaxWidth?: number // 描述文本最大宽度
 }

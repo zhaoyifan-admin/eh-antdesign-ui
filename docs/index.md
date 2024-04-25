@@ -13,7 +13,7 @@ hero:
     alt: Eh Antdesign UI
   actions:
     - theme: brand
-      text: Get Started
+      text: 开始使用
       link: /guide/features
     - theme: alt
       text: View on GitHub

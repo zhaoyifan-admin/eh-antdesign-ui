@@ -1,8 +1,8 @@
 @font-face {
     font-family: "plugins"; /* Project id 4485457 */
-    src: url('iconfont.woff2?t=1711676653341') format('woff2'),
-    url('iconfont.woff?t=1711676653341') format('woff'),
-    url('iconfont.ttf?t=1711676653341') format('truetype');
+    src: url('iconfont.woff2?t=1714010388048') format('woff2'),
+    url('iconfont.woff?t=1714010388048') format('woff'),
+    url('iconfont.ttf?t=1714010388048') format('truetype');
 }
 
 .plugins {
@@ -12,12 +12,28 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-xinzeng:before {
-    content: "\e611";
+.icon-chakan:before {
+    content: "\e600";
+}
+
+.icon-bianji:before {
+    content: "\e659";
+}
+
+.icon-qingkong:before {
+    content: "\e622";
+}
+
+.icon-chazhao:before {
+    content: "\e612";
 }
 
 .icon-shuaxin:before {
-    content: "\e80a";
+    content: "\e782";
+}
+
+.icon-xinzeng:before {
+    content: "\e611";
 }
 
 .icon-dayin:before {

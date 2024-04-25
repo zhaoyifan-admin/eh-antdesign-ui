@@ -4,7 +4,7 @@ interface Props {
   onInfo?: string // 选中时的内容
   offInfo?: string // 未选中时的内容
   disabled?: boolean // 是否禁用
-  checked?: boolean // （v-model）指定当前是否选中
+  checked?: boolean // （v-modal）指定当前是否选中
   nodeStyle?: CSSProperties // 节点样式
 }
 const props = withDefaults(defineProps<Props>(), {

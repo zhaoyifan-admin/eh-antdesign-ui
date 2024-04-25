@@ -18,7 +18,7 @@ interface Props {
   prefix?: string // 前缀图标 string | slot
   formatter?: Function // 指定展示值的格式
   keyboard?: boolean // 是否启用键盘快捷键行为（上方向键增，下方向键减）
-  value?: number|null // 当前值(v-model)
+  value?: number | null // 当前值(v-modal)
 }
 const props = withDefaults(defineProps<Props>(), {
   width: 90,

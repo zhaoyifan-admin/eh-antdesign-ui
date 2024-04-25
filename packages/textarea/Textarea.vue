@@ -16,7 +16,7 @@ interface Props {
   disabled?: boolean // 是否禁用
   maxlength?: number // 最大长度
   showCount?: boolean // 是否展示字数
-  value?: string // 文本域内容(v-model)
+  value?: string // 文本域内容(v-modal)
   valueModifiers?: object // 用于访问组件的v-model上添加的修饰符
 }
 const props = withDefaults(defineProps<Props>(), {

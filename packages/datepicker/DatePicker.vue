@@ -20,7 +20,7 @@ interface Props {
   // multiCalendars?: boolean // 范围选择器是否使用双日期面板
   // flow?: any[] // 定义选择顺序 ("calendar" | "time" | "month" | "year" | "minutes" | "hours" | "seconds")[]
   // dark?: boolean // 样式主题是否使用黑色
-  modelType?: 'timestamp'|'format', // v-model 值类型，可选时间戳(timestamp)、字符串(format)，mode为week和year时，该配置不生效
+  modelType?: 'timestamp' | 'format', // v-modal 值类型，可选时间戳(timestamp)、字符串(format)，mode为week和year时，该配置不生效
 }
 const props = withDefaults(defineProps<Props>(), {
   width: 180,

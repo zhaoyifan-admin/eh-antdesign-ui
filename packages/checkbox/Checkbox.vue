@@ -9,12 +9,12 @@ interface Props {
   options?: Array<Option> // 复选元素数据
   disabled?: boolean // 是否禁用所有复选框
   vertical?: boolean // 是否垂直排列
-  value?: any[] // 当前选中的值（v-model）
+  value?: any[] // 当前选中的值（v-modal）
   gap?: number // 多个单选框之间的间距，单位px，垂直排列时，间距即垂直间距
   width?: string|number, // 复选区域最大展示宽度，超出后折行
   height?: string|number, // 复选区域最大展示高度，超出后滚动
   indeterminate?: boolean // 全选时的样式控制
-  checked?: boolean // 是否全选（v-model）
+  checked?: boolean // 是否全选（v-modal）
 }
 const props = withDefaults(defineProps<Props>(), {
   options: () => [],
